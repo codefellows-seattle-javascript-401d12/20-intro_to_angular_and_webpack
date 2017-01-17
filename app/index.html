@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='mooMoo'>
+  <head>
+    <title>Mooooooooooo!</title>
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Basic|Days+One|Freckle+Face|Fredoka+One|Luckiest+Guy|Rock+Salt|Shadows+Into+Light+Two" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <section class='container' ng-controller='MooMooController'>
+        <h2>{{ mooMooCtrl.title }}</h2>
+
+        <pre class='moo'>
+          {{ mooMooCtrl.speak(mooMooCtrl.text) }}
+        </pre>
+
+        <button ng-click='mooMooCtrl.sayThat(mooMooCtrl.text)'>2nd pre-tag-btn</button>
+
+        <pre class='moo'>
+          {{ mooMooCtrl.said }}
+        </pre>
+
+        <input type='text' ng-model='mooMooCtrl.text'>
+        <br/>
+        <button ng-click='mooMooCtrl.logger(mooMooCtrl.text)'>LOG</button>
+      </section>
+
+      <section class='container' ng-controller='MooMooController'>
+        <h2>Some 2 way data binding right here!</h2>
+
+        <p class='text-binder'>{{ mooMooCtrl.bindText }}</p>
+        <br/>
+        <input type='text' ng-model='mooMooCtrl.bindText'>
+      </section>
+    </main>
+  </body>
+</html>
