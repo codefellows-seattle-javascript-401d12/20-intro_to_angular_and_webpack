@@ -1,15 +1,16 @@
-/* $vars */
+/*** $vars ***/
 
 $brand-primary: #444;
 $btn-primary: $brand-primary / 2;
-$btn-hover: #31b1c1;
-$black: #000;
+// $btn-hover: #31b1c1;
+$btn-hover: #ff4da6;
+$black: #333;
 $white: #fff;
 $box-std: 40%;
 $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
 
-/* global style */
+/*** global style ***/
 
 body {
   font-family: helvetica;
@@ -21,6 +22,8 @@ h2 {
   font-size: 3vw;
   text-align: center;
   margin-bottom: $gutter-std;
+  text-transform: uppercase;
+  color: $black * 2;
 }
 
 button {
@@ -45,11 +48,39 @@ input[type="text"] {
   margin-right: $gutter-std / 2;
   padding: 2%;
   border: none;
+  border: solid .1vw $black;
   border-radius: 3px;
 }
 
-// homework: only a few more lines
-// make 50/50
-/*
-clone down and use as comp
-*/
+pre {
+  font-family: monospace;
+  margin: $gutter-std;
+}
+
+/*** app styles ***/
+
+.container {
+  float: left;
+  width: $box-std;
+  margin: 2%;
+  background: $white;
+  padding: 2%;
+  border: solid .1vw $black;
+  border-radius: 3px;
+}
+
+.text-binder {
+  height: 15vw;
+  font-size: 3vw;
+  margin: $gutter-std;
+  padding: 1vw;
+  color: $white;
+  background: $brand-primary / 2;
+  border: solid .25vw $brand-primary;
+  border-radius: 3px;
+
+  + input {
+    width: $box-std * 2;
+    margin: $gutter-std;
+  }
+}
