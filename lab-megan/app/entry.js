@@ -18,7 +18,7 @@ function CowsayAppController($log, $scope) {
 
   cowsayAppCtrl.speak = function(input) {
     $log.debug('cowsayAppCtrl.speak()');
-    return cowsay.say({ text: input || 'mooooo' });
+    return cowsay.say({ text: input || 'hissss' });
   };
 
   cowsayAppCtrl.logger = function(input) {
