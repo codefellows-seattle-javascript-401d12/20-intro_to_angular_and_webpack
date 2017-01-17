@@ -21,4 +21,9 @@ function CowsayController($log, $scope) {
     $log.debug('cowsayCtrl.speak()');
     return cowsay.say({ text: input || 'Hello World' });
   };
+
+  cowsayCtrl.log = function(input) {
+    $log.debug('cowsayCtrl.log()');
+    $log.log(input);
+  };
 }
