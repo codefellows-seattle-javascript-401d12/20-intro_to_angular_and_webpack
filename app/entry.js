@@ -33,8 +33,4 @@ function MooMooController($log, $scope) {
     mooMooCtrl.said = output;
     return mooMooCtrl.said;
   };
-
-  mooMooCtrl.reset = function() {
-    $log.debug('mooMooCtrl.reset()');
-  };
-};
+}
