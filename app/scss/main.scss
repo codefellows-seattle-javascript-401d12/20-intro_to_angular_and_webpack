@@ -1,10 +1,53 @@
 // <<<< $vars >>>>
 
 $brand-primary: #fdf6ee;
-$btn-primary: #ff6666;
-$btn-hover: ;
+$btn-primary: #444;
+$btn-hover: #ff6666;
 $black: #000;
 $white: #fff;
 $box-std: 40%;
 $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
+
+// <<<< global styles >>>>
+
+body {
+  font-family: helvetica;
+  font-size: 2vw;
+  background: $brand-primary;
+}
+
+h2 {
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: $gutter-std;
+}
+
+button {
+  float: right;
+  width: $box-std;
+  padding: 2% 0;
+  background: $btn-primary;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-std + 10%;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+.cow {
+  font-family: monospace;
+}
