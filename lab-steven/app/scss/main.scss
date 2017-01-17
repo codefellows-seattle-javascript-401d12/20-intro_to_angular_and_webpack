@@ -1,0 +1,23 @@
+$margin-center: 0 auto;
+$large-size: 5vw;
+$h2-font: "Times New Roman", sans-serf;
+$gutter-vert-std: 6%;
+
+h2 {
+  font-size: $large-size;
+  text-align: center;
+  font-family: $h2-font;
+}
+
+pre {
+  width: 28%;
+  margin: $margin-center;
+  font-family: Monospace;
+  margin-bottom: $gutter-vert-std;
+}
+
+input {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+}
