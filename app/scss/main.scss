@@ -1,0 +1,51 @@
+// :::: $vars ::::
+
+$brand-primary: #2B2B2B;
+$btn-primary: $brand-primary / 2;
+$btn-hover: #DE1B1B;
+$black: #000;
+$white: #F6F6F6;
+$box-std: 40%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+
+// :::: base styles ::::
+
+body {
+  font-family: Verdana;
+  font-size: 2vw;
+  background: $brand-primary;
+  color: $white;
+}
+
+h2 {
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: $gutter-std;
+  margin-top: $gutter-std;
+}
+
+button {
+  float: right;
+  width: $box-std;
+  padding: 2% 0;
+  background: $btn-primary / 3;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-std + 10%;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
