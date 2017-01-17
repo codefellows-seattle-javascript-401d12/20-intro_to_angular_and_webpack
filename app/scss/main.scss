@@ -1,0 +1,87 @@
+// **************** Variables ****************
+// ----- Colors -----
+$black: #000;
+$white: #fff;
+$burg: #821013;
+// ---- Fonts -----
+$freckleFace: 'Freckle Face', cursive;
+$luckiestGuy: 'Luckiest Guy', cursive;
+
+// ----- Sizes -----
+$box-standard: 50%;
+$gutter-standard: 5%;
+$gutter-small: $gutter-standard / 2;
+$margin-standard: 10%;
+
+body {
+  margin: $margin-standard;
+  margin-top: none;
+  padding-top: none;
+  font-family: $freckleFace;
+  main {
+    position: relative;
+    left: auto;
+    right: auto;
+    width: 100%;
+    .container {
+      float: left;
+      text-align: center;
+      width: $box-standard;
+      height: 100%;
+      h2 {
+        font-size: 4vw;
+        text-align: center;
+      }
+      pre {
+        padding: $gutter-small;
+        padding-left: none;
+        font-family: monospace;
+        font-weight: bolder;
+        font-size: 2vw;
+        text-align: left;
+        overflow: hidden;
+      }
+      .text-binder {
+        color: $burg;
+        text-align: center;
+        font-size: 3vw;
+        margin-top: $gutter-standard;
+      }
+      input[type='text'] {
+        margin: $gutter-small / 2;
+        height: 3vw;
+        width: 30vw;
+        font-size: 2.5vw;
+        background: $black;
+        color: $white;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+      }
+      #bind-input {
+        position: relative;
+        bottom: 0;
+      }
+      button {
+        font-size: 2vw;
+        background: $black;
+        color: $white;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        font-family: $freckleFace;
+        height: $box-standard;
+        width: auto;
+        cursor: pointer;
+        transition: 350ms all;
+        &:hover {
+          color: $burg;
+          background: $white;
+          font-size: 5vw;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
