@@ -22,7 +22,14 @@ h2 {
   font-size: 3vw;
   text-align: center;
   margin-bottom: $gutter-std;
-  margin-top: $gutter-std;
+}
+
+.container {
+  margin-top: $gutter-std*2;
+}
+
+.cow {
+  color: $btn-hover / 2;
 }
 
 button {
