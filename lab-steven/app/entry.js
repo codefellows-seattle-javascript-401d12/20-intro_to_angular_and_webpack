@@ -19,11 +19,6 @@ function CowsayController($log, $scope) {
 
   cowsayCtrl.speak = function(message) {
     $log.debug('cowsayCtrl.speak');
-    return cowsay.say({text: message || 'Tell me something to say.'});
-  };
-
-  cowsayCtrl.logger = function(message) {
-    $log.debug('cowsayCtrl.logger');
-    $log.log(message);
+    return cowsay.say({text: message || 'Tell me something to say.', f: 'ghostbusters'});
   };
 }
