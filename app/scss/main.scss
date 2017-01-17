@@ -1,0 +1,10 @@
+//:::::::::: $var :::::::::::::
+
+$brand-primary: #444;
+
+//:::::::: global Style :::::::::::::
+body{
+  font-family: helvetica;
+  font-size: 2vw;
+  background: $brand-primary * 3;
+}
