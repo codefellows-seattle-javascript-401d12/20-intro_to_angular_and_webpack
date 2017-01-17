@@ -1,0 +1,87 @@
+// ::: $vars :::
+
+$brand-primary: #072740;
+$btn-primary: $brand-primary / 2;
+$btn-hover: #31b1c1;
+$black: #000;
+$white: #fff;
+$input-bg: #f2f2f2;
+$box-std: 40%;
+$gutter-std: 5%;
+$gutter-small: $gutter-std / 2;
+
+$border-radius: 1px;
+
+// ::: global styles :::
+
+body {
+  font-family: helvetica;
+  font-size: 2vw;
+  background: $brand-primary;
+}
+
+h2 {
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: $gutter-std;
+}
+
+button {
+  font-size: 2.5vw;
+  width: $box-std *2;
+  padding: 2% 0;
+  background: $btn-primary * 5;
+  color: $white;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: 350ms all;
+  margin: $gutter-small ($gutter-std *2);
+
+  &:hover{
+    background: $btn-hover;
+  }
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-std * 2;
+  margin: 0 $gutter-std * 2 $gutter-small $gutter-std *2;
+  border: none;
+  border-radius: $border-radius;
+  background: $input-bg;
+}
+
+pre {
+  font-family:monospace;
+  float: left;
+  width: $box-std;
+  margin: $gutter-std;
+}
+
+// ::: app styles :::
+
+.container {
+  float: left;
+  width: $box-std;
+  margin: 3%;
+  padding: 2%;
+  background: #fff;
+  transition: 350ms all;
+
+}
+
+.text-binder{
+  height: 20vw;
+  font-size: 3vw;
+  margin: $gutter-std 0;
+  padding: 1vw;
+  color: $white;
+  background: $brand-primary / 3;
+  border: dotted .25vw $brand-primary;
+
+  // + input {
+  //   width: 100%;
+  // }
+}
