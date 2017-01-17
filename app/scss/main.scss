@@ -16,6 +16,7 @@ $margin-standard: 10%;
 body {
   margin: $margin-standard;
   margin-top: none;
+  padding-top: none;
   font-family: $freckleFace;
   main {
     position: relative;
@@ -47,10 +48,10 @@ body {
         margin-top: $gutter-standard;
       }
       input[type='text'] {
-        margin: $margin-standard / 3;
-        height: 4vw;
+        margin: $gutter-small / 2;
+        height: 3vw;
         width: 30vw;
-        font-size: 3vw;
+        font-size: 2.5vw;
         background: $black;
         color: $white;
         border-radius: 3px;
