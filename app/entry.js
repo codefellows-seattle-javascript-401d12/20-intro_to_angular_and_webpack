@@ -15,6 +15,8 @@ function CowsayController($log, $scope) {
 
   let cowsayControl = $scope.cowsayControl = {};
 
+  cowsayControl.title = 'Welcome to Cowville!';
+
   cowsayControl.speak = function(input) {
     $log.debug('cowsayControl speak');
     return cowsay.say({ text: input || 'mooooo' });
