@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cowsayApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
   </head>
   <body>
+    <main>
+      <div class="container" ng-controller="CowsayController">
+        <h2>{{ cowsayControl.title }}</h2>
+        <pre class="cow">
+          {{ cowsayControl.speak(cowsayControl.text) }}
+        </pre>
+        <input type="text" ng-model="cowsayControl.text">
+        <button type="button" name="button" ng-click="cowsayControl.logger(cowsayControl.text)">Log it!</button>
+      </div>
 
+      <section class="container" ng-controller="CowsayController">
+        <h2>Two-way Data Binding!</h2>
+        <p class="text-binder">{{ cowsayControl.bindText }}</p>
+        <input type="text" ng-model="cowsayControl.bindText">
+      </section>
+    </main>
   </body>
 </html>
