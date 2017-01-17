@@ -6,9 +6,9 @@ require('./scss/main.scss');
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
 
-const cowsayApp = angular.module('cowsayApp', []);
+const cowApp = angular.module('cowsayApp', []);
 
-cowsayApp.controller('Cowsaycontroller', ['$log', '$scope', CowsayController]);
+cowApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
 
 function CowsayController($log, $scope) {
   $log.debug('CowsayController');
