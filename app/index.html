@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='cowsayApp'>
+  <head>
+    <title>What can your cow say?</title>
+  </head>
+  <body>
+    <main>
+      <section class="container" ng-controller="CowsayController">
+        <h2>{{ cowsayCtrl.title }}</h2>
+
+        <pre class="cow">
+          {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+        </pre>
+
+        <input type="text" ng-model="cowsayCtrl.text">
+        <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Click to Log</button>
+      </section>
+    </main>
+
+  </body>
+</html>
