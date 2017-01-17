@@ -15,12 +15,12 @@ function CowsayController($log, $scope) {
 
   let cowsayCtrl = $scope.cowsayCtrl = {};
 
-  cowsayCtrl.title = 'Welcome to JS!';
+  cowsayCtrl.title = 'Welcome to Angular JS!';
 
   cowsayCtrl.speak = function(input) {
     $log.debug('cowsayCtrl.speak()');
 
-    return cowsay.say({text: input || 'Heyo!'});
+    return cowsay.say({text: input || 'Beware of night cow...'});
   };
 
   cowsayCtrl.logger = function(input) {

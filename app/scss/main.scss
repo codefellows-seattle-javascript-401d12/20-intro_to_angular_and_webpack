@@ -1,13 +1,18 @@
 // <<<< $vars >>>>
 
-$brand-primary: #fdf6ee;
-$btn-primary: #444;
+$brand-primary: #2a2a2a;
+$btn-primary: #888888;
 $btn-hover: #ff6666;
 $black: #000;
 $white: #fff;
 $box-std: 40%;
+$box-sm: $box-std / 2;
+$box-lg: $box-std * 2;
 $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
+$gutter-lg: $gutter-std * 2;
+$ctr: 0 auto;
+$pad-reg: 2%;
 
 // <<<< global styles >>>>
 
@@ -18,15 +23,16 @@ body {
 }
 
 h2 {
+  color: $white;
   font-size: 3vw;
   text-align: center;
+  margin-top: $gutter-std;
   margin-bottom: $gutter-std;
 }
 
 button {
-  float: right;
-  width: $box-std;
-  padding: 2% 0;
+  width: $box-std - 10%;
+  padding: $pad-reg 0;
   background: $btn-primary;
   color: $white;
   border: none;
@@ -40,14 +46,42 @@ button {
 }
 
 input[type="text"] {
-  float: left;
-  width: $box-std + 10%;
+  width: $box-std - 5%;
+  margin-left: $gutter-lg + 3.5%;
   margin-right: $gutter-std / 2;
-  padding: 2%;
+  padding: $pad-reg;
   border: none;
   border-radius: 3px;
 }
 
+pre {
+  width: $box-lg - 22.5%;
+  margin: $ctr;
+  overflow: hidden;
+}
+
 .cow {
   font-family: monospace;
+  color: $white;
+}
+
+p {
+  color: $white;
+  padding: $pad-reg;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.container {
+  width: $box-lg - 20%;
+  margin: $ctr;
+
+  .inner-contain {
+    background: $black;
+    border: $btn-hover ridge 6px;
+    border-radius: 3px;
+    padding-bottom: $pad-reg;
+  }
 }
