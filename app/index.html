@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Cowville App</title>
+  </head>
+  <body>
+    <main>
+      <section class="container" ng-controller="CowsayController">
+        <h2>{{ cowsayCtrl.title }}</h2>
+        <pre class="cow">{{ cowsayCtrl.speak(cowsayCtrl.text) }}</pre>
+        <input type="text" ng-model="cowsayCtrl.text">
+        <button ng-click="cowsayCtrl.log(cowsayCtrl.text)">log what the cow says</button>
+      </section>
+    </main>
+  </body>
+</html>
