@@ -2,7 +2,7 @@
   "name": "20-intro_to_angular_and_webpack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
