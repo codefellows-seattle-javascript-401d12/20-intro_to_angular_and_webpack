@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
-    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "lint": "gulp lint"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
     "webpack-dev-server": "^1.16.2"
   }
 }
