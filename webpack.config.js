@@ -5,7 +5,7 @@ const HTMLPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: `${__dirname}/app/entry.js`,
   output: {
-    filename: 'bundle.js',
+    filename: 'app.js',
     path: 'build'
   },
   plugins: [
