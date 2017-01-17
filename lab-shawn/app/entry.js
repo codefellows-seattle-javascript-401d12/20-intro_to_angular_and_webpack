@@ -14,6 +14,7 @@ function CowsayController($log,$scope){
   $log.debug('CowsayController');
 
   let cowsayCtrl = $scope.cowsayCtrl = {};
+  cowsayCtrl.history = [];
 
   cowsayCtrl.title = 'Straight Outta Cowville';
 
@@ -31,11 +32,13 @@ function CowsayController($log,$scope){
   cowsayCtrl.copyText = function(input){
     $log.debug('cowsayCtrl.copyText()');
     cowsayCtrl.copiedText = input;
+    cowsayCtrl.history.push(cowsayCtrl.copiedText);
   };
 
-  cowsayCtrl.showLast = function(input){
+  cowsayCtrl.showLast = function(){
     $log.debug('cowsay.showLast()');
-    cowsayCtrl.lastText = input;
+    cowsayCtrl.copiedText = cowsayCtrl.history[cowsayCtrl.history.length - 2];
+    // cowsayCtrl.history.shift();
   };
 
 
