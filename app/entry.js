@@ -30,7 +30,23 @@ function CowsayController($log, $scope) {
     $log.log(input);
   };
 
-  // cowsayCtrl.copy = function(input) {
-  //
-  // };
+  cowsayCtrl.save = function() {
+    $log.debug('cowsayCtrl.save()', cowsayCtrl.text);
+    if(cowsayCtrl.text) {
+      cowsayCtrl.history.push(cowsayCtrl.text);
+      cowsayCtrl.text;
+    }
+  };
+
+  cowsayCtrl.last = function() {
+    $log.debug('cowsayCtrl.last()');
+    let len = cowsayCtrl.history.length;
+    if(len == 0) return;
+    return cowsayCtrl.history[len - 1];
+  };
+
+  cowsayCtrl.back = function() {
+    $log.debug('cowsayCtrl.back()');
+    cowsayCtrl.history.pop();
+  };
 }
