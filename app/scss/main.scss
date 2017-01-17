@@ -1,0 +1,84 @@
+//::: $vars :::
+
+$brand-primary: #42af61;
+$btn-primary: $brand-primary / 2;
+$btn-hover: #31b1c1;
+$black: #000;
+$white: #fff;
+$box-std: 40%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+
+//::: global styles :::
+
+body {
+  font-family: rockwell;
+  font-size: 2vw;
+  background: $brand-primary * 2;
+
+}
+
+h2 {
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: $gutter-std;
+  margin-top: 2%;
+  text-transform: capitalize;;
+}
+
+button {
+  float: right;
+  width: $box-std;
+  padding: 2% 0;
+  background: $btn-primary / 2;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+  margin-right: 1em;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-std + 10%;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+
+pre {
+  font-family: monospace;
+  margin: $gutter-std;
+  overflow-x: scroll;
+}
+
+.container {
+  float: left;
+  width: $box-std;
+  margin: 4%;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.text-binder {
+  height: 15vw;
+  font-size: 3vw;
+  margin: $gutter-std;
+  padding: 1vw;
+  color: $white;
+  background: $brand-primary / 2;
+  border: dotted .25vw $brand-primary;
+  overflow-y: scroll;
+
+  + input {
+    width: $box-std * 2;
+    margin-left: 8%;
+  }
+}
