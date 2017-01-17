@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint **/*.js --ignore-path node_modules/ build/",
     "build": "webpack",
-    "watch": "webpack-dev-server.js --inline --hot"
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
   },
   "keywords": [],
   "author": "",
