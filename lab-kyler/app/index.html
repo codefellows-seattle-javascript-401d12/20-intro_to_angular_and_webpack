@@ -18,12 +18,17 @@
               {{ cowfile }}
             </option>
           </select>
+          <input type="text" ng-model="cowsayCtrl.text">
+          <button type="submit">Speak/submit</button>
         </form>
-        <pre>
-          {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+
+        <pre class="cow">
+          {{ cowsayCtrl.history[cowsayCtrl.history.length - 1] }}
         </pre>
-        <input type="text" ng-model="cowsayCtrl.text">
+
+
         <crazy-button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log It!</button>
+
       </section>
       <section class="container" ng-controller="cowsayController as cowsayCtrl">
         <h2>Text preview area:</h2>

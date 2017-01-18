@@ -15,7 +15,7 @@ function cowsayController($log) {
   $log.debug('cowsayController constructor');
 
   this.title = 'Welcome to Cowville!';
-  this.history = [];
+  this.history = [cowsay.say({ text: 'I moo 4 u', f: this.current })];
   this.text = '';
 
   cowsay.list( (err, cowfiles) => {
@@ -23,24 +23,15 @@ function cowsayController($log) {
     this.current = 'default';
   });
 
-  this.undo = function() {
-    $log.debug('cowsayCtrl.undo()');
-    this.spoken = this.history.pop();
-  };
-
-  this.update = function(input) {
-    $log.debug('cowsayCtrl.update()');
-
-    return cowsay.say({ text: input || 'no input', f: this.current });
-  };
+  // this.undo = function() {
+  //   $log.debug('cowsayCtrl.undo()');
+  //   this.spoken = this.history.pop();
+  // };
 
   this.speak = function(input) {
     $log.debug('cowsayCtrl.speak()');
 
-    return cowsay.say({
-      text: input || 'MOOOOOOO',
-      f: this.current
-    });
+    return this.history.push(cowsay.say({ text: input || 'no input', f: this.current }));
   };
 
   this.logger = function(input) {
