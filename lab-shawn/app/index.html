@@ -5,26 +5,39 @@
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController">
-        <h2>{{ cowsayCtrl.title}}</h2>
+      <header>
+        <nav ng-controller="NavController as navCtrl">
+          <ul>
+            <li ng-repeat="route in navCtrl.routes">
+              <a href="{{route.url}}">{{route.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="container" ng-controller="CowsayController as cowsayCtrl" ng-init="cowsayCtrl.current = 'default'">
+        <h2>{{cowsayCtrl.title}}</h2>
         <pre class="cow">
-          {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
         </pre>
-        <input type="text" ng-model="cowsayCtrl.text" />
-        <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log It</button>
 
-        <h2>Populate Second Pre Tag</h2>
-        <pre class="cow">
-          {{ cowsayCtrl.copiedText}}
-        </pre>
-        <button ng-click="cowsayCtrl.copyText(cowsayCtrl.text)">Populate</button>
-        <button ng-click="cowsayCtrl.showLast(cowsayCtrl.copiedText)">Show Last</button>
-      </section>
+        <form name="cowsayForm" ng-submit="cowsayCtrl.speak(cowsayCtrl.text)" novaliate>
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{cowfile}}">
+              {{cowfile}}
+            </option>
+          </select>
 
-      <section class="container" ng-controller="CowsayController">
-        <h2>Two Way Data Binding</h2>
-        <p class="text-binder">{{cowsayCtrl.bindText}}</p>
-        <input type="text" ng-model="cowsayCtrl.bindText" />
+          <input type="text" ng-model="cowsayCtrl.text" required/>
+          <button type="submit">Speak</button>
+        </form>
+
+        <div ng-show="cowsayCtrl.spoken" class="history">
+          <h2>Moo Said What?</h2>
+          <pre>
+            {{cowsayCtrl.spoken}}
+          </pre>
+          <button type="button" ng-click="cowsayCtrl.undo()">Undo</button>
+        </div>
       </section>
     </main>
   </body>

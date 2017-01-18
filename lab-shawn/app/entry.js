@@ -8,38 +8,62 @@ const cowsay = require('cowsay-browser');
 
 const cowsayApp = angular.module('cowsayApp',[]);
 
-cowsayApp.controller('CowsayController', ['$log','$scope', CowsayController]);
+cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 
-function CowsayController($log,$scope){
+function CowsayController($log){
   $log.debug('CowsayController');
 
-  let cowsayCtrl = $scope.cowsayCtrl = {};
-  cowsayCtrl.history = [];
+  cowsay.list((err,cowfiles) => {
+    if(err) throw new Error('error with cowfiles');
+    this.cowfiles = cowfiles;
+    this.current = this.cowfiles[0];
+  });
 
-  cowsayCtrl.title = 'Straight Outta Cowville';
+  this.title = 'Straight Outta Cowville';
+  this.history = [];
 
-  cowsayCtrl.speak = function(input){
-    $log.debug('cowsayCtrl.speak()');
-    return cowsay.say({text:input || 'mooooooo'});
-  };
-
-  cowsayCtrl.logger = function(input){
+  this.logger = function(input){
     $log.debug('cowsayCtrl.logger()');
     $log.log(input);
-    $log.log($scope);
   };
 
-  cowsayCtrl.copyText = function(input){
-    $log.debug('cowsayCtrl.copyText()');
-    cowsayCtrl.copiedText = input;
-    cowsayCtrl.history.push(cowsayCtrl.copiedText);
-  };
-
-  cowsayCtrl.showLast = function(){
-    $log.debug('cowsay.showLast()');
-    cowsayCtrl.copiedText = cowsayCtrl.history[cowsayCtrl.history.length - 2];
-    // cowsayCtrl.history.shift();
+  this.update = function(input){
+    $log.debug('cowsayCtrl.update()');
+    return cowsay.say({text:input || 'mooooooo', f: this.current});
   };
 
 
+  this.speak = function(input){
+    $log.debug('cowsayCtrl.speak()');
+    this.spoken = this.update(input);
+    this.history.push(this.spoken);
+    this.text ='';
+  };
+
+  this.undo = function(){
+    $log.debug('cowsayCtrl.undo()');
+    this.history.pop();
+    this.spoken = this.history[this.history.length - 1] || '';
+  };
+}
+
+cowsayApp.controller('NavController',['$log',NavController]);
+
+function NavController($log){
+  $log.debug('NavController');
+
+  this.routes = [
+    {
+      name: 'home',
+      url: '/home'
+    },
+    {
+      name: 'about',
+      url: '/about-us'
+    },
+    {
+      name: 'contact',
+      url: '/contact-us'
+    }
+  ];
 }

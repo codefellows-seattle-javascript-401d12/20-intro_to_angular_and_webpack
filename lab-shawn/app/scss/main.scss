@@ -1,16 +1,28 @@
+// ::: @mixin :::
+
+@mixin box-shadow($x,$y,$blur,$spread,$color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -ms-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
 // ::: $vars :::
 
-$brand-primary: #072740;
-$btn-primary: $brand-primary / 2;
+$brand-primary: #aaa;
+$btn-primary: #072740;
 $btn-hover: #31b1c1;
 $black: #000;
 $white: #fff;
 $input-bg: #f2f2f2;
-$box-std: 40%;
+$nav-bg: #072740;
+
+
+$box-std: 90%;
+$half-cont: 50%;
 $gutter-std: 5%;
 $gutter-small: $gutter-std / 2;
-
-$border-radius: 1px;
+$border-radius: 2px;
 
 // ::: global styles :::
 
@@ -20,45 +32,84 @@ body {
   background: $brand-primary;
 }
 
+nav{
+
+  width: 100%;
+  background: $nav-bg;
+  color: $white;
+  @include box-shadow(2px, 2px, 2px, 1px, rgba(0, 0, 0, 0.2));
+
+
+  li{
+    display: inline-block;
+    margin: $gutter-small;
+
+    &:first-letter{
+      text-transform: capitalize;
+    }
+
+    a{
+      text-decoration: none;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+}
+
 h2 {
-  font-size: 3vw;
+  font-size: 4vw;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: $gutter-std;
+  text-align: left;
+  margin-bottom: $gutter-small;
+}
+pre {
+  float:left;
+  font-family:monospace;
+  width: $half-cont + 2.5;
+  padding-left: 5%;
+}
+
+form{
+  float:right;
+  width: $half-cont - 13.5%;
+  background: $input-bg;
+  padding: $gutter-small;
+  border: 1px dotted $brand-primary / .8;
+  margin-bottom: $gutter-small;
+
 }
 
 button {
-  font-size: 2.5vw;
-  width: $box-std *2;
+  font-size: 2vw;
+  width: $box-std;
   padding: 2% 0;
-  background: $btn-primary * 5;
+  margin-left: $gutter-std;
+  background: $btn-primary * 2;
   color: $white;
   border: none;
   border-radius: $border-radius;
   cursor: pointer;
   transition: 350ms all;
-  margin: $gutter-small ($gutter-std *2);
+
 
   &:hover{
     background: $btn-hover;
   }
 }
-
 input[type="text"] {
-  float: left;
-  width: $box-std * 2;
-  margin: 0 $gutter-std * 2 $gutter-small $gutter-std *2;
   border: none;
   border-radius: $border-radius;
-  background: $input-bg;
+  background: $white;
+  margin: $gutter-std;
+  width: $box-std;
 }
 
-pre {
-  font-family:monospace;
-  float: left;
+select{
+  margin-left: $gutter-std ;
   width: $box-std;
-  margin: $gutter-std;
+  font-size: 2vw;
 }
+
 
 // ::: app styles :::
 
@@ -68,20 +119,18 @@ pre {
   margin: 3%;
   padding: 2%;
   background: #fff;
-  transition: 350ms all;
+  @include box-shadow(2px, 2px, 2px, 1px, rgba(0, 0, 0, 0.2));
 
 }
 
-.text-binder{
-  height: 20vw;
-  font-size: 3vw;
-  margin: $gutter-std 0;
-  padding: 1vw;
-  color: $white;
-  background: $brand-primary / 3;
-  border: dotted .25vw $brand-primary;
-
-  // + input {
-  //   width: 100%;
-  // }
+.history{
+  clear: both;
+  h2{
+    border-top: 1px solid $input-bg;
+    padding-top: $gutter-small;
+  }
+  pre{
+    width: $box-std;
+    text-align: center;
+  }
 }
