@@ -22,24 +22,22 @@ body {
 
 nav {
   background: $black;
-
-}
-li a {
-  color: $white;
-  text-decoration: none;
-  font-size: 2vw;
-  padding: $gutter-sm;
-  cursor: pointer;
-  transition: 350ms all;
-
-  &:hover {
-    color: $btn-hover;
+  li {
+    display: inline-block;
+    margin: $gutter-sm;
   }
-}
+  a {
+    color: $white;
+    text-decoration: none;
+    font-size: 2vw;
+    padding: $gutter-sm;
+    cursor: pointer;
+    transition: 350ms all;
 
-li {
-  display: inline-block;
-  margin: $gutter-sm;
+    &:hover {
+      color: $btn-hover;
+    }
+  }
 }
 
 h2 {
