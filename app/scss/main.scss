@@ -1,0 +1,101 @@
+// :::: $vars ::::
+
+$brand-primary: #2B2B2B;
+$btn-primary: $brand-primary / 2;
+$btn-hover: #DE1B1B;
+$black: #000;
+$white: #F6F6F6;
+$green: #58AB00;
+$box-std: 40%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+
+// :::: base styles ::::
+
+body {
+  font-family: Verdana;
+  font-size: 2vw;
+  background: $brand-primary;
+  color: $white;
+  margin: 2% 2%;
+}
+
+nav {
+  background: $black;
+  li {
+    display: inline-block;
+    margin: $gutter-sm;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    font-size: 2vw;
+    padding: $gutter-sm;
+    cursor: pointer;
+    transition: 350ms all;
+
+    &:hover {
+      color: $btn-hover;
+    }
+  }
+}
+
+h2 {
+  font-size: 3vw;
+  text-align: center;
+  margin-bottom: $gutter-std + $gutter-sm;
+}
+
+
+.container {
+  margin: $gutter-std*2;
+}
+
+.cow {
+  color: $btn-hover /1.5;
+  text-align: center;
+  margin-bottom: $gutter-std/2;
+  border: 2px solid $white;
+}
+
+select {
+  float: right;
+  margin: $gutter-sm/2;
+  width: $box-std/2;
+}
+
+button {
+  float: right;
+  width: $box-std;
+  padding: 2% 0;
+  background: $btn-primary / 3;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-std + 10%;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+.history {
+  border: 2px solid $white;
+  margin-top: $gutter-std *2 + $gutter-sm/2;
+  margin-bottom: $gutter-sm;
+  text-align: center;
+}
+
+.spokenCow {
+  color: $green;
+}

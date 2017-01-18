@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app='cowsayApp'>
+  <head>
+    <title>What can your cow say?</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav ng-controller="NavController as navCtrl">
+          <ul>
+            <li ng-repeat="route in navCtrl.routes">
+              <a href="{{ route.url }}">{{ route.name }}</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section
+        class="container"
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="cowsayCtrl.current = 'dragon'">
+        <h2>{{ cowsayCtrl.title }}</h2>
+
+        <pre class="cow">
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
+              {{ cowfile }}
+            </option>
+          </select>
+        </pre>
+
+        <form
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          name="cowsayForm"
+          novalidate>
+
+          <input type="text" ng-model="cowsayCtrl.text" required>
+          <button type="submit">Speak!</button>
+
+        </form>
+        <div ng-show="cowsayCtrl.spoken" class="history">
+          <pre class="spokenCow">
+            {{ cowsayCtrl.spoken }}
+          </pre>
+        </div>
+        <button type="button" ng-show="cowsayCtrl.spoken" ng-click="cowsayCtrl.undo()">Undo</button>
+      </section>
+    </main>
+  </body>
+</html>
