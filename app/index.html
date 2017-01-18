@@ -22,27 +22,28 @@
 
         <pre class="cow">
           {{ cowsayCtrl.update(cowsayCtrl.text) }}
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
+              {{ cowfile }}
+            </option>
+          </select>
         </pre>
 
         <form
           ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
           name="cowsayForm"
           novalidate>
-          <select ng-model="cowsayCtrl.current">
-            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
-              {{ cowfile }}
-            </option>
-          </select>
 
           <input type="text" ng-model="cowsayCtrl.text" required>
           <button type="submit">Speak!</button>
 
-          <div ng-show="cowsayCtrl.spoken" class="history">
-            <pre>
-              {{ cowsayCtrl.spoken }}
-            </pre>
-          </div>
         </form>
+        <div ng-show="cowsayCtrl.spoken" class="history">
+          <pre class="spokenCow">
+            {{ cowsayCtrl.spoken }}
+          </pre>
+        </div>
+        <button type="button" ng-show="cowsayCtrl.spoken" ng-click="cowsayCtrl.undo()">Undo</button>
       </section>
     </main>
   </body>
