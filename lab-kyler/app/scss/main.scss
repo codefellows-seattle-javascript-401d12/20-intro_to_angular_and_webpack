@@ -17,10 +17,17 @@ h1 {
   //text-transform: uppercase;
 }
 
+section{
+  width: 80vw;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 pre {
   font-family: courier;
   padding: 10vw;
   width: 90vw;
+  margin: 0 auto;
 }
 
 body {

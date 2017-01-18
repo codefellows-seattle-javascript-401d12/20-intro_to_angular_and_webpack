@@ -9,7 +9,7 @@ const cowsay = require('cowsay-browser');
 
 const cowsayApp = angular.module('cowsayApp', []);
 
-cowsayApp.controller('cowsayController', ['$log', '$scope', cowsayController]);
+cowsayApp.controller('cowsayController', ['$log', cowsayController]);
 
 function cowsayController($log) {
   $log.debug('cowsayController constructor');
