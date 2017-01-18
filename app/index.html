@@ -6,14 +6,14 @@
   </head>
   <body>
     <main>
-      <div class="container" ng-controller="CowsayController">
+      <section class="container" ng-controller="CowsayController">
         <h2>{{ cowsayControl.title }}</h2>
         <pre class="cow">
           {{ cowsayControl.speak(cowsayControl.text) }}
         </pre>
         <input type="text" ng-model="cowsayControl.text">
-        <button type="button" name="button" ng-click="cowsayControl.logger(cowsayControl.text)">Log it!</button>
-      </div>
+        <button ng-click="cowsayControl.logger(cowsayControl.text)">Log it!</button>
+      </section>
 
       <section class="container" ng-controller="CowsayController">
         <h2>Two-way Data Binding!</h2>
