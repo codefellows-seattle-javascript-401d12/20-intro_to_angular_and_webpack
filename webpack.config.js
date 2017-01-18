@@ -16,8 +16,17 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      },
+      {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loader: 'style!css!sass!'
+      },
+      {
+        test: /\.(eot|woff|ttf|svg).*/,
+        loader: 'url?limit=100000&name=fonts/[hash].[ext]'
       }
     ]
   }
