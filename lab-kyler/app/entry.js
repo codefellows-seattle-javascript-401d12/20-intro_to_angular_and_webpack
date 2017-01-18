@@ -20,7 +20,7 @@ function cowsayController($log) {
 
   cowsay.list( (err, cowfiles) => {
     this.cowfiles = cowfiles;
-    this.current = this.cowfiles[0];
+    this.current = 'default';
   });
 
   this.undo = function() {
@@ -37,7 +37,10 @@ function cowsayController($log) {
   this.speak = function(input) {
     $log.debug('cowsayCtrl.speak()');
 
-    return cowsay.say({ text: input || 'MOOOOOOO' });
+    return cowsay.say({
+      text: input || 'MOOOOOOO',
+      f: this.current
+    });
   };
 
   this.logger = function(input) {

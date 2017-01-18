@@ -7,7 +7,7 @@
     <main>
       <section class="container"
       ng-controller="cowsayController as cowsayCtrl"
-      ng-init="cowsayCtrl.current = 'chick'">
+      ng-init="cowsayCtrl.current = 'default'">
         <h1 align=center>{{ cowsayCtrl.title }}</h1>
         <form
           ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
