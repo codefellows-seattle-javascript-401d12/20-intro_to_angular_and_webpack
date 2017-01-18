@@ -17,6 +17,8 @@
         <pre>{{cowsayCtrl.speak(cowsayCtrl.message)}}</pre>
 
         <input type="text" ng-model="cowsayCtrl.message" placeholder="Who ya' gonna' call?">
+
+        <pre ng-show="cowsayCtrl.history.length > 0">{{cowsayCtrl.speak(cowsayCtrl.message)}}</pre>
       </section>
     </main>
   </body>
