@@ -11,8 +11,15 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: `${__dirname}/app/index.html` })
   ],
-  module: { loaders: [{
-    test: /\.scss$/,
-    loader: 'style!css!sass!'
-  }]}
+  module: { loaders: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel'
+    },
+    {
+      test: /\.scss$/,
+      loader: 'style!css!sass!'
+    }
+  ]}
 };
