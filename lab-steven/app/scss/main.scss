@@ -1,14 +1,31 @@
 $margin-center: 0 auto;
 $large-size: 5vw;
+$normal-size: $large-size / 2;
 $h2-font: "Times New Roman", sans-serf;
 $gutter-vert-std: 6%;
+$gutter-vert-sm: 1.5%;
 $light-grey: #ddd;
+$light-blue: #009685;
+$white: #fff;
+$button-radius: 5px;
+$terrible-font: "Comic Sans", serif;
 $border-std: 2px solid black;
 
 h2 {
   font-size: $large-size;
   text-align: center;
   font-family: $h2-font;
+}
+
+h4 {
+  margin-top: $gutter-vert-sm;
+  font-size: $normal-size;
+  text-align: center;
+}
+
+select {
+  display: block;
+  margin: $margin-center;
 }
 
 pre {
@@ -21,7 +38,30 @@ pre {
 input {
   display: block;
   border: $border-std;
-  width: 30%;
+  width: 20%;
   background: $light-grey;
   margin: $margin-center;
+  margin-bottom: $gutter-vert-sm;
+}
+
+button {
+  font-size: $normal-size;
+  font-family: $terrible-font;
+  color: $white;
+  background: $light-blue;
+  border: none;
+  margin-left: 1%;
+  border-radius: $button-radius;
+  width: 45%;
+  transition: 450ms all;
+
+  &:hover {
+    background: $light-blue / 3;
+    cursor: pointer;
+  }
+}
+
+button[type="button"] {
+  margin-right: 1%;
+  float: right;
 }
