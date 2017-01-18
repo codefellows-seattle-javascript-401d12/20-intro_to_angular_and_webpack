@@ -1,0 +1,91 @@
+// ::$vars:: //just some ascii art::::::::
+
+$brand-primary: #444;
+$brand-crazy: #512;
+$button-primary: $brand-primary / 2; //this is a cool feature of sass
+$button-hover: #44c;
+$black: #113;
+$white: #ddd;
+$box-std: 40%;
+$input-crazy: #226;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+
+// ::global styles::
+
+h1 {
+  //text-transform: uppercase;
+}
+
+section{
+  width: 80vw;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+pre {
+  font-family: courier;
+  padding: 10vw;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+body {
+  font-family: helvetica;
+  font-size: 4vw; //2% of viewport width
+  background: $brand-crazy * 3;
+}
+
+h2 {
+  font-size: 4vw;
+  text-align: left;
+  margin-bottom: $gutter-std;
+}
+
+button {
+  float: right;
+  width: $box-std;
+  padding: 2% 0;
+  background: $button-primary / 3;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $button-hover;
+  }
+}
+
+input[type="text"] {
+  background-color: $input-crazy;
+  color: white;
+  font-size: 5vw;
+  float: left;
+  width: $box-std + 10%;
+  height: 5vw;
+  margin-right: $gutter-std / 2;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+crazy-button {
+  float: right;
+  width: $box-std;
+  height: 5vw;
+  padding: 2% 0;
+  background: $button-primary / 3;
+  color: $white;
+  border: none;
+  text-align: center;
+  font-size: 5vw;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0ms all;
+
+  &:hover {
+    background: $button-hover;
+  }
+}
