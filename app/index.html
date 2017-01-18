@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app='mooMoo'>
+  <head>
+    <title>Mooooooooooo!</title>
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Basic|Days+One|Freckle+Face|Fredoka+One|Luckiest+Guy|Rock+Salt|Shadows+Into+Light+Two" rel="stylesheet">
+  </head>
+  <body>
+    <header class='navbar'>
+      <nav ng-controller="NavController as navCtrl">
+        <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ link.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class='container'
+        ng-controller='MooMooController as mooMooCtrl'
+        ng-init="mooMooCtrl.current='squirrel'">
+        <h2>{{ mooMooCtrl.title }}</h2>
+
+        <pre class='moo'>
+          {{ mooMooCtrl.update(mooMooCtrl.text) }}
+        </pre>
+
+        <form
+          ng-submit="mooMooCtrl.speak(mooMooCtrl.text)"
+          name="mooMooForm"
+          no validate>
+
+          <div class="row">
+            <select ng-model="mooMooCtrl.current">
+              <option ng-repeat="cowfile in mooMooCtrl.cowfiles" value="{{ cowfile }}">
+                {{ cowfile }}
+              </option>
+            </select>
+            <br/>
+            <input type="text" ng-model="mooMooCtrl.text" required>
+            <button type="submit">Speak!</button>
+          </div>
+
+          <div ng-show="mooMooCtrl.spoken" class="history">
+            <pre>
+              {{ mooMooCtrl.spoken }}
+            </pre>
+            <div class="row">
+              <button type="button" ng-click="mooMooCtrl.undo()">Undo</button>
+            </div>
+          </div>
+        </form>
+
+        <div class='row'>
+          <input type='text' ng-model='mooMooCtrl.text'>
+          <button ng-click='mooMooCtrl.logger(mooMooCtrl.text)'>LOG</button>
+        </div>
+      </section>
+
+      <section class='container' id='twowayfooter' ng-controller='MooMooController as mooMooCtrl'>
+        <h2>Some 2 way data binding right here!</h2>
+
+        <p class='text-binder'>{{ mooMooCtrl.bindText }}</p>
+
+        <div class='row'>
+          <input type='text' ng-model='mooMooCtrl.bindText'>
+          <button ng-click='mooMooCtrl.sayThat(mooMooCtrl.text)'>2nd pre-tag-btn</button>
+        </div>
+
+        <pre class='moo'>
+          {{ mooMooCtrl.said }}
+        </pre>
+      </section>
+    </main>
+  </body>
+</html>
