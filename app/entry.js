@@ -24,7 +24,7 @@ function CowsayController($log) {
   this.update = function(input) {
     $log.debug('cowsayCtrl.update');
 
-    return cowsay.say({ text: input || 'Say something, please.', f: this.current });
+    return cowsay.say({ text: input || 'Say something, please. *Sniffle*', f: this.current });
   };
 
   this.speak = function(input) {

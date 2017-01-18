@@ -5,6 +5,8 @@ $btn-primary: $brand-primary / 2;
 $btn-hover: #31b1c1;
 $black: #000;
 $white: #fff;
+$purple: #551A8B;
+$eggshell-white: #F0EAD6;
 $box-std: 100%;
 $gutter-std: 5%;
 $gutter-sm: $gutter-std / 2;
@@ -14,7 +16,7 @@ $gutter-sm: $gutter-std / 2;
 body {
   font-family: helvetica;
   font-size: 2vw;
-  background: $brand-primary * 3;
+  background: $eggshell-white;
 }
 
 a {
@@ -24,10 +26,9 @@ a {
 }
 
 h2 {
-  font-size: 5vw;
+  font-size: 3vw;
   text-align: center;
-  text-decoration: underline;
-  color: $brand-primary;
+  color: $purple;
   margin-bottom: $gutter-std;
 }
 
@@ -71,7 +72,7 @@ pre {
 // :::: app styles ::::
 
 nav {
-  height: 4vw;
+  height: 3vw;
   background: $black;
   padding: 2vw;
   margin-bottom: $gutter-std;
@@ -81,7 +82,7 @@ nav {
     margin-right: 3vw;
 
     a {
-      font-size: 3vw;
+      font-size: 2vw;
       color: $white;
       text-shadow: 1px 1px 1px $btn-hover;
     }
@@ -91,18 +92,4 @@ nav {
 .container {
   width: 80%;
   margin-left: 10%;
-}
-
-.text-binder {
-  height: 15vw;
-  font-size: 3vw;
-  margin: $gutter-std;
-  padding: 1vw;
-  color: $white;
-  background: $brand-primary / 3;
-  border: dotted .25vw $brand-primary;
-
-  + input {
-    width: 100%;
-  }
 }
