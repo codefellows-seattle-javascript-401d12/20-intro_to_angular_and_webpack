@@ -28,4 +28,10 @@ function CowsayController($log) {
     this.savedCow = this.speak(message);
     this.history.push(this.savedCow);
   };
+
+  this.remove = function() {
+    $log.debug('cowsayCtrl.remove');
+    this.history.pop();
+    this.savedCow = this.history[this.history.length - 1] || '';
+  };
 }

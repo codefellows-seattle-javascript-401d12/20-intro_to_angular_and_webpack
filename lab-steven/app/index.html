@@ -20,7 +20,11 @@
           <input type="text" ng-model="cowsayCtrl.message" placeholder="Who ya' gonna' call?">
           <button type="submit">Save cow</button>
         </form>
-        <pre ng-show="cowsayCtrl.history.length > 0">{{cowsayCtrl.savedCow}}</pre>
+
+        <div ng-show="cowsayCtrl.history.length > 0">
+          <pre>{{cowsayCtrl.savedCow}}</pre>
+          <button type="button" ng-click="cowsayCtrl.remove()">Show previous</button>
+        </div>
       </section>
     </main>
   </body>
