@@ -21,10 +21,31 @@ body {
   background: $brand-secondary;
 }
 
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3vw;
+  margin: $gutter-extra-sm;
+}
+
 .container {
   background: $brand-primary;
   margin: $gutter-std;
   padding: $gutter-extra-sm;
+}
+
+form {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: $box-std;
+  height: 3vw;
+  font-size: 1.7vw;
+  margin-top: $gutter-extra-sm;
+  &:focus {
+    background: $input-background;
+  }
 }
 
 button {
@@ -42,13 +63,11 @@ button {
   }
 }
 
-input[type="text"] {
-  width: $box-std;
-  height: 3vw;
-  font-size: 2vw;
-  margin-top: $gutter-extra-sm;
+.cow {
+  margin-left: 33.3%;
 }
 
-input[type="text"]:focus {
-  background: $input-background;
+.text-binder {
+  float: right;
+  margin-top: $gutter-extra-sm;
 }

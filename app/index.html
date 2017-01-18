@@ -7,18 +7,26 @@
   <body>
     <main>
       <section class="container" ng-controller="CowsayController">
-        <h2>{{ cowsayControl.title }}</h2>
+        <h2 class="title">{{ cowsayControl.title }}</h2>
         <pre class="cow">
           {{ cowsayControl.speak(cowsayControl.text) }}
         </pre>
-        <input type="text" ng-model="cowsayControl.text">
-        <button ng-click="cowsayControl.logger(cowsayControl.text)">Log it!</button>
+        <form>
+          <input type="text"
+          ng-model="cowsayControl.text"
+          autofocus>
+          <button ng-click="cowsayControl.logger(cowsayControl.text)">Log it!</button>
+        </form>
       </section>
 
       <section class="container" ng-controller="CowsayController">
-        <h2>Two-way Data Binding!</h2>
+        <h2 class="text-binder-title">Two-way Data Binding!</h2>
         <p class="text-binder">{{ cowsayControl.bindText }}</p>
-        <input type="text" ng-model="cowsayControl.bindText">
+        <input
+        type="text"
+        onfocus="this.value='';"
+        ng-model="cowsayControl.bindText"
+        ng-init="cowsayControl.bindText='  Type something to see the input displayed.'">
       </section>
     </main>
   </body>
