@@ -1,6 +1,7 @@
 'use strict';
 
 const HTMLPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: `${__dirname}/app/entry.js`,
@@ -11,7 +12,8 @@ module.exports = {
   plugins: [
     new HTMLPlugin({
       template: `${__dirname}/app/index.html`
-    })
+    }),
+    new ExtractTextPlugin('bundle.css')
   ],
   module: {
     loaders: [
