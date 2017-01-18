@@ -30,6 +30,7 @@ function CowsayController($log) {
     $log.debug('cowsayCtrl.speak()');
     this.spoken = this.update(input);
     this.history.push(this.spoken);
+    console.log(this.history);
   };
 
   this.undo = function() {
