@@ -31,7 +31,7 @@ h2 {
 }
 
 button {
-  width: $box-std - 10%;
+  width: $box-std - 6%;
   padding: $pad-reg 0;
   background: $btn-primary;
   color: $white;
@@ -46,23 +46,24 @@ button {
 }
 
 input[type="text"] {
-  width: $box-std - 5%;
-  margin-left: $gutter-lg + 3.5%;
-  margin-right: $gutter-std / 2;
+  width: $box-lg - 20%;
   padding: $pad-reg;
   border: none;
   border-radius: 3px;
+  margin-bottom: $gutter-sm;
+  margin-right: 0.5%;
+}
+
+select {
+  width: $box-std;
+  margin-bottom: 1%;
 }
 
 pre {
-  width: $box-lg - 22.5%;
+  width: 100%;
   margin: $ctr;
-  overflow: hidden;
-}
-
-.cow {
+  overflow: auto;
   font-family: monospace;
-  color: $white;
 }
 
 p {
@@ -74,14 +75,13 @@ p {
   white-space: normal;
 }
 
-.container {
-  width: $box-lg - 20%;
-  margin: $ctr;
+// <<<< app styles >>>>
 
-  .inner-contain {
-    background: $black;
-    border: $btn-hover ridge 1vw;
-    border-radius: 3px;
-    padding-bottom: $pad-reg;
-  }
+.cow {
+  color: $white;
+}
+
+.container {
+  width: $box-lg;
+  margin: $ctr;
 }
