@@ -8,29 +8,67 @@ const cowsay = require('cowsay-browser');
 
 const mooMoo = angular.module('mooMoo', []);
 
-mooMoo.controller('MooMooController', ['$log', '$scope', MooMooController]);
+mooMoo.controller('MooMooController', ['$log', MooMooController]);
 
-function MooMooController($log, $scope) {
+function MooMooController($log) {
   $log.debug('MooMooController');
 
-  let mooMooCtrl = $scope.mooMooCtrl = {};
 
-  mooMooCtrl.title = 'Moooooooo from all us cows!';
+  this.title = `Moooooooo from all us cows!`;
+  this.history = [];
 
-  mooMooCtrl.speak = function(input) {
-    $log.debug('mooMooCtrl.speak()');
-    return cowsay.say({ text: input || 'Mooooooooo' });
+  cowsay.list((err, cowfiles) => {
+    this.cowfiles = cowfiles;
+    this.current = this.cowfiles[0];
+  });
+
+  this.update = function(input) {
+    $log.debug('mooMooCtrl.update()');
+    return cowsay.say({ text: input || 'Mooooooo', f: this.current })
   };
 
-  mooMooCtrl.logger = function(input) {
+  this.speak = function(input) {
+    $log.debug('mooMooCtrl.speak()');
+    this.spoken = this.update(input);
+    this.history.push(this.spoken);
+  };
+
+  this.undo = function() {
+    $log.debug('mooMooCtrl.undo()');
+    this.history.pop();
+    this.spoken = this.history.pop() || '';
+  };
+
+  this.logger = function(input) {
     $log.debug('mooMooCtrl.logger()');
     $log.log(input);
   };
 
-  mooMooCtrl.sayThat = function(output) {
+  this.sayThat = function(output) {
     $log.debug('mooMooCtrl.sayThat()');
 
-    mooMooCtrl.said = output;
-    return mooMooCtrl.said;
+    this.said = output;
+    return this.said;
   };
-}
+};
+
+mooMoo.controller('NavController', ['$log', NavController]);
+
+function NavController($log) {
+  $log.debug('NavController');
+
+  this.routes = [
+    {
+      name: 'home',
+      url: '/home'
+    },
+    {
+      name: 'about',
+      url: '/about'
+    },
+    {
+      name: 'contact',
+      url: '/contact'
+    }
+  ];
+};
