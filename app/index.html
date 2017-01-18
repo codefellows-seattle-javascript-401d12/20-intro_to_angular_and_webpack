@@ -12,7 +12,7 @@
         <h2>{{cowsayCtrl.title}}</h2>
 
         <pre class="cow">
-          {{cowsayCtrl.speak(cowsayCtrl.text)}}
+          {{cowsayCtrl.update(cowsayCtrl.text)}}
         </pre>
 
         <form
@@ -27,16 +27,14 @@
 
           <input type="text" ng-model="cowsayCtrl.text" required>
           <button type="submit">Speak!</button>
-        </form>
-      </section>
 
-      <section class="container" ng-controller="CowsayController">
-        <h2>Two-Way Data Binding!</h2>
-        <section class="inner-contain">
-          <p class="text-binder">{{cowsayCtrl.bindText}}</p>
-          <input type="text" ng-model="cowsayCtrl.bindText">
-          <button ng-click="cowsayCtrl.logger(cowsayCtrl.bindText)">Log It</button>
-        </section>
+          <div ng-show="cowsayCtrl.spoken" class="history">
+            <pre class="cow">
+              {{cowsayCtrl.spoken}}
+            </pre>
+            <button type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
+          </div>
+        </form>
       </section>
     </main>
   </body>
