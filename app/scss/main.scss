@@ -22,6 +22,17 @@ body {
   background: $brand-primary;
 }
 
+header {
+  color: $white;
+  background: $black;
+  padding: $pad-reg + 1%;
+}
+
+h1 {
+  float: left;
+}
+
+
 h2 {
   color: $white;
   font-size: 3vw;
@@ -94,6 +105,26 @@ p {
 }
 
 // <<<< app styles >>>>
+
+nav {
+  width: 100%;
+  text-align: right;
+
+  li {
+    display: inline;
+    margin-left: 4vw;
+
+    a {
+      color: inherit;
+      font-size: 1.5vw;
+      text-decoration: none;
+
+      &:hover {
+        color: $btn-hover;
+      }
+    }
+  }
+}
 
 .cow {
   color: $white;

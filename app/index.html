@@ -5,10 +5,21 @@
   </head>
   <body>
     <main>
+      <header>
+        <h1>Cowception</h1>
+        <nav ng-controller="NavController as navCtrl">
+          <ul>
+            <li ng-repeat="route in navCtrl.routes">
+              <a href="{{route.url}}">{{route.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
       <section
       class="container"
       ng-controller="CowsayController as cowsayCtrl"
-      ng-init="cowsayCtrl.current = 'squirrel'">
+      ng-init="cowsayCtrl.current = 'cower'">
         <h2>{{cowsayCtrl.title}}</h2>
 
         <h3>Create a cow illustration.</h3>
