@@ -5,19 +5,28 @@
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController as cowsayCtrl">
+      <section
+        class="container"
+        ng-controller="CowsayController as cowsayCtrl"
+        >
         <h2>{{ cowsayCtrl.title }}</h2>
         <pre class="cow">
           {{ cowsayCtrl.speak(cowsayCtrl.text) }}
         </pre>
+        <form name="cowsayForm"
+          ng-submit="cowsayCtrl.save()"
+          novalidate
+          >
+          <input type="text" ng-model="cowsayCtrl.text">
 
-        <input type="text" ng-model="cowsayCtrl.text">
-
-        <button ng-click="cowsayCtrl.save()">Save</button>
-        <pre class="cow">
-          {{ cowsayCtrl.speak(cowsayCtrl.last()) }}
-        </pre>
-        <button ng-click="cowsayCtrl.back()">Back</button>
+          <button type="submit">Save</button>
+        </form>
+        <div ng-show="cowsayCtrl.last()" class="history">
+          <pre class="cow">
+            {{ cowsayCtrl.speak(cowsayCtrl.last()) }}
+          </pre>
+          <button ng-click="cowsayCtrl.back()">Back</button>
+        </div>
       </section>
     </main>
   </body>
