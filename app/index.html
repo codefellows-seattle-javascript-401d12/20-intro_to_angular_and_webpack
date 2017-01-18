@@ -7,9 +7,12 @@
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController">
+      <section class="container" ng-controller="CowsayController as cowsayCtrl">
         <h2>{{ cowsayCtrl.title }}</h2>
-        <pre class="cow">{{ cowsayCtrl.speak(cowsayCtrl.text) }}</pre>
+        <pre class="cow">{{ cowsayCtrl.update(cowsayCtrl.text) }}</pre>
+        <select ng-model="cowsayCtrl.current">
+          <option ng-repeat"cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">{{ cowfile }}</option>
+        </select>
         <input type="text" ng-model="cowsayCtrl.text">
         <button ng-click="cowsayCtrl.log(cowsayCtrl.text)">log what the cow says</button>
       </section>
