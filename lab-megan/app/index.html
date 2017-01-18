@@ -6,7 +6,7 @@
   <body>
 
     <header>
-      
+
       <nav ng-controller="NavAppController as navAppCtrl">
         <ul>
           <li ng-repeat="route in navAppCtrl.routes">
@@ -30,16 +30,16 @@
           {{ cowsayAppCtrl.speak(cowsayAppCtrl.text) }}
         </pre>
 
-          <form
-            ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)"
-            name="cowsayAppForm"
-            novalidate><!-- NOTE: space or no in novalidate?? -->
+        <form
+          ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)"
+          name="cowsayAppForm"
+          novalidate><!-- NOTE: space or no in novalidate?? -->
 
-            <seclect ng-model="cowsayAppCtrl.current">
-              <option ng-reapeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">
-                {{ cowfile }}
-              </option>
-            </select>
+          <select ng-model="cowsayAppCtrl.current">
+            <option ng-repeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">
+              {{ cowfile }}
+            </option>
+          </select>
 
           <input type="text" ng-model="cowsayAppCtrl.text" required>
           <button type="submit">Speak!</button>
@@ -50,8 +50,8 @@
             </pre>
             <button type="button" ng-click="cowsayAppCtrl.undo()">Undo</button>
           </div>
-        </form>
 
+        </form>
 
       </section>
 

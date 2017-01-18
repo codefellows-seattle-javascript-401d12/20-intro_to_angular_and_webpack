@@ -17,7 +17,8 @@ function CowsayAppController($log) {
   this.history = [];
 
   cowsay.list((err, cowfiles) => {
-    this.cowfiles = cowfiles[0];
+    this.cowfiles = cowfiles;
+    this.current = this.cowfiles[0];
   });
 
   this.update = function(input) {
@@ -34,6 +35,7 @@ function CowsayAppController($log) {
   this.undo = function() {
     $log.debug('cowsayAppCtrl.undo()');
     this.history.pop();
+    this.spoken = this.history.pop() || '';
   };
 }
 
