@@ -30,13 +30,46 @@ h2 {
   margin-bottom: $gutter-std;
 }
 
+h3 {
+  clear: both;
+  color: $white;
+  font-size: 2vw;
+  margin-left: $gutter-lg;
+  margin-bottom: 1%;
+}
+
+h4 {
+  float: left;
+  color: $white;
+  font-size: 1.5vw;
+  margin-left: $gutter-std + 2%;
+  margin-bottom: 1%;
+}
+
+select {
+  float: left;
+  width: $box-sm;
+  margin-left: $gutter-std + 2%;
+  margin-bottom: $gutter-std;
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-sm;
+  border: none;
+  border-radius: 3px;
+  margin-left: $gutter-std + 2%;
+  margin-bottom: $gutter-std;
+}
+
 button {
-  width: $box-std - 6%;
-  padding: $pad-reg 0;
+  float: left;
+  width: $box-sm;
   background: $btn-primary;
   color: $white;
   border: none;
   border-radius: 3px;
+  margin-left: $gutter-std + 2%;
   cursor: pointer;
   transition: 350ms all;
 
@@ -45,24 +78,9 @@ button {
   }
 }
 
-input[type="text"] {
-  width: $box-lg - 20%;
-  padding: $pad-reg;
-  border: none;
-  border-radius: 3px;
-  margin-bottom: $gutter-sm;
-  margin-right: 0.5%;
-}
-
-select {
-  width: $box-std;
-  margin-bottom: 1%;
-}
-
 pre {
-  width: 100%;
+  width: $box-lg;
   margin: $ctr;
-  overflow: auto;
   font-family: monospace;
 }
 
@@ -82,6 +100,19 @@ p {
 }
 
 .container {
-  width: $box-lg;
+  width: $box-lg + 10%;
   margin: $ctr;
+}
+
+.inner-contain {
+  float: left;
+  width: $box-std + 10%;
+  height: 12em;
+  overflow: auto;
+  background: $black;
+  margin-left: $gutter-std + 5%;
+  margin-bottom: $gutter-std;
+  border: $btn-hover ridge 1vw;
+  border-radius: 3px;
+  padding-bottom: $pad-reg;
 }

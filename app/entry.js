@@ -13,7 +13,7 @@ cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 function CowsayController($log) {
   $log.debug('CowsayController');
 
-  this.title = 'Welcome to Angular JS!';
+  this.title = 'Welcome to Cowception!';
   this.history = [];
 
   cowsay.list((err, cowfiles) => {
