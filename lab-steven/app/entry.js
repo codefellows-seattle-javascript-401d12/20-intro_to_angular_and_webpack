@@ -22,4 +22,10 @@ function CowsayController($log) {
     $log.debug('cowsayCtrl.speak');
     return cowsay.say({text: message || 'Tell me something to say.', f: this.currentCow});
   };
+
+  this.saveCow = function(message) {
+    $log.debug('cowsayCtrl.saveCow');
+    this.savedCow = this.speak(message);
+    this.history.push(this.savedCow);
+  };
 }

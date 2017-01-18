@@ -14,11 +14,13 @@
           </option>
         </select>
 
-        <pre>{{cowsayCtrl.speak(cowsayCtrl.message)}}</pre>
+        <form ng-submit="cowsayCtrl.saveCow(cowsayCtrl.message)" novalidate>
+          <pre>{{cowsayCtrl.speak(cowsayCtrl.message)}}</pre>
 
-        <input type="text" ng-model="cowsayCtrl.message" placeholder="Who ya' gonna' call?">
-
-        <pre ng-show="cowsayCtrl.history.length > 0">{{cowsayCtrl.speak(cowsayCtrl.message)}}</pre>
+          <input type="text" ng-model="cowsayCtrl.message" placeholder="Who ya' gonna' call?">
+          <button type="submit">Save cow</button>
+        </form>
+        <pre ng-show="cowsayCtrl.history.length > 0">{{cowsayCtrl.savedCow}}</pre>
       </section>
     </main>
   </body>
