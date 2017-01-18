@@ -14,6 +14,9 @@ function CowsayController($log) {
   $log.debug('CowsayController');
 
   this.title = 'Cowsay controller title';
+  this.history = [];
+
+  cowsay.list((err, cowfiles) => this.cowfiles = cowfiles);
 
   this.speak = function(message) {
     $log.debug('cowsayCtrl.speak');
