@@ -25,7 +25,7 @@ function CowsayController($log) {
     return cowsay.say({
       text: input || 'Whooooooshhh!',
       f: this.current
-    }).trim();
+    });
   };
 
   this.logger = function(input) {
@@ -48,7 +48,7 @@ function CowsayController($log) {
     let len = this.history.length;
     if(len == 0) return;
     let item = this.history[len - 1];
-    return cowsay.say(item).trim();
+    return cowsay.say(item);
   };
 
   this.back = function() {
