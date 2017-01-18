@@ -8,16 +8,14 @@ const cowsay = require('cowsay-browser');
 
 const cowApp = angular.module('cowApp', []);
 
-cowApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
+cowApp.controller('CowsayController', ['$log', CowsayController]);
 
-function CowsayController($log, $scope) {
+function CowsayController($log) {
   $log.debug('CowsayController');
 
-  let cowsayCtrl = $scope.cowsayCtrl = {};
+  this.title = 'Cowsay controller title';
 
-  cowsayCtrl.title = 'Cowsay controller title';
-
-  cowsayCtrl.speak = function(message) {
+  this.speak = function(message) {
     $log.debug('cowsayCtrl.speak');
     return cowsay.say({text: message || 'Tell me something to say.', f: 'ghostbusters'});
   };
