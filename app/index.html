@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html ng-app="cowsayApp">
   <head>
     <title>Welcome to Cow Speaks!</title>
@@ -19,14 +18,14 @@
       ng-controller="CowsayController as cowsayCtrl"
       ng-init="cowsayCtrl.current = 'dragon'">
         <h2>{{ cowsayCtrl.title }}</h2>
-        <pre class="cow">
-          {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+        <pre>
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
         </pre>
         <form
         ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
         name="cowsayForm"
         novalidate>
-        <select ng-model="cowsayCtrl.current(cowsayCtrl.text)">
+        <select ng-model="cowsayCtrl.current">
           <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
             {{ cowfile }}
           </option>

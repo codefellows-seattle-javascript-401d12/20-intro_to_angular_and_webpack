@@ -23,7 +23,7 @@ function CowsayController($log) {
 
   this.update = function(input) {
     $log.debug('cowsayCtrl.update()');
-    return cowsay.say({ text: input || 'miiiiilk', f: this.current });
+    return cowsay.say({ text: input || 'HEYYYYYY', f: this.current });
   };
 
   this.speak = function(input) {
@@ -35,7 +35,7 @@ function CowsayController($log) {
   this.undo = function() {
     $log.debug('cowsayCtrl.undo()');
     this.history.pop();
-    this.spoken = this.history[this.history.length - 1 || ''];
+    this.spoken = this.history.pop() || '';
   };
 }
 
