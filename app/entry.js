@@ -30,7 +30,7 @@ function CowsayController($log) {
 
   this.update = function(input) {
     $log.debug('update()');
-    return cowsay.say({ text: input || 'Hello World', f: this.current });
+    return cowsay.say({ text: input || 'I am your father', f: this.current });
   };
 
   this.log = function(input) {
@@ -43,4 +43,25 @@ function CowsayController($log) {
     this.history.pop();
     this.spoken = this.history[this.history.length - 1] || '';
   };
+}
+
+cowsayApp.controller('CowsayNav', ['$log', CowsayNav]);
+
+function CowsayNav($log) {
+  $log.debug('CowsayNav');
+
+  this.routes = [
+    {
+      name: 'about',
+      url: 'https://github.com/jonathanheemstra/20-intro_to_angular_and_webpack/blob/master/README.md'
+    },
+    {
+      name: 'cow creator',
+      url: '/'
+    },
+    {
+      name: 'contact',
+      url: 'https://www.linkedin.com/in/jonathanheemstra/'
+    }
+  ];
 }

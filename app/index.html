@@ -7,7 +7,15 @@
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController as cowsayCtrl">
+      <header>
+        <h1>Cowsay.io</h1>
+        <nav ng-controller="CowsayNav as navCtrl">
+          <ul>
+            <li ng-repeat="routes in navCtrl.routes"><a href="{{ routes.url }}">{{ routes.name }}</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="container" ng-controller="CowsayController as cowsayCtrl" ng-init="cowsayCtrl.current = 'vader'">
         <h2>{{ cowsayCtrl.title }}</h2>
         <pre class="cow">{{ cowsayCtrl.update(cowsayCtrl.text) }}</pre>
         <div class="cowsay-form">
