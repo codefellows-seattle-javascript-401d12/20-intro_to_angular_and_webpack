@@ -7,27 +7,29 @@
     <main>
       <section class="container"
       ng-controller="cowsayController as cowsayCtrl"
-      ng-init="cowsayCtrl.current = 'default'">
+      ng-init="cowsayCtrl.currentCow = 'default'">
         <h1 align=center>{{ cowsayCtrl.title }}</h1>
         <form
-          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          ng-submit="cowsayCtrl.saveCow(cowsayCtrl.currentText)"
           name="cowsayForm"
           novalidate>
-          <select ng-model="cowsayCtrl.current">
+          <select ng-model="cowsayCtrl.currentCow">
             <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
               {{ cowfile }}
             </option>
           </select>
-          <input type="text" ng-model="cowsayCtrl.text">
-          <button type="submit">Speak/submit</button>
+          <input type="text" ng-model="cowsayCtrl.currentText">
+          <button type="submit">Save this masterpiece</button><br>
         </form>
+        <button ng-click="cowsayCtrl.undo()">Undo</button>
 
-        <pre class="cow">
-          {{ cowsayCtrl.history[cowsayCtrl.history.length - 1] }}
+        <pre>
+          {{ cowsayCtrl.currentArt() }}
         </pre>
+        <hr>
+          {{ cowsayCtrl.history }}
 
-
-        <crazy-button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log It!</button>
+        <crazy-button ng-click="cowsayCtrl.logger(cowsayCtrl.currentText)">Log It!</button>
 
       </section>
       <section class="container" ng-controller="cowsayController as cowsayCtrl">

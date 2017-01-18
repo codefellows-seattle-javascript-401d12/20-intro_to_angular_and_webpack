@@ -14,24 +14,30 @@ cowsayApp.controller('cowsayController', ['$log', '$scope', cowsayController]);
 function cowsayController($log) {
   $log.debug('cowsayController constructor');
 
-  this.title = 'Welcome to Cowville!';
-  this.history = [cowsay.say({ text: 'I moo 4 u', f: this.current })];
-  this.text = '';
-
-  cowsay.list( (err, cowfiles) => {
-    this.cowfiles = cowfiles;
-    this.current = 'default';
+  cowsay.list( (err, cowlist) => {
+    this.cowfiles = cowlist;
   });
 
-  // this.undo = function() {
-  //   $log.debug('cowsayCtrl.undo()');
-  //   this.spoken = this.history.pop();
-  // };
+  this.title = 'CowCreater 1000';
+  this.history = [{ text: 'I moo 4 u', f: 'default' }];
 
-  this.speak = function(input) {
-    $log.debug('cowsayCtrl.speak()');
+  this.undo = function() {
+    $log.debug('cowsayCtrl.undo()');
 
-    return this.history.push(cowsay.say({ text: input || 'no input', f: this.current }));
+    if(this.history.length > 1) return this.history.pop();
+    return 0;
+  };
+
+  this.currentArt = function() {
+    $log.debug('cowsayCtrl.currentArt()');
+
+    return cowsay.say({ text: this.history[this.history.length-1].text, f: this.history[this.history.length-1].f });
+  };
+
+  this.saveCow = function(inputText) {
+    $log.debug('cowsayCtrl.newCow()');
+
+    return this.history.push({text: inputText, f: this.currentCow});
   };
 
   this.logger = function(input) {
