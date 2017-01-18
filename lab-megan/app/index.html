@@ -4,9 +4,25 @@
     <title>Welcome to Cow Town!</title>
   </head>
   <body>
+
+    <header>
+      
+      <nav ng-controller="NavAppController as navAppCtrl">
+        <ul>
+          <li ng-repeat="route in navAppCtrl.routes">
+            <a href="{{ link.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
     <main>
 
-      <section class="container" ng-controller="CowsayAppController">
+      <section
+        class="container"
+        ng-controller="CowsayAppController as cowsayAppCtrl"
+        ng-init="cowsayAppCtrl.current = 'squirrel'">
 
         <h2>{{ cowsayAppCtrl.title }}</h2>
 
@@ -14,19 +30,40 @@
           {{ cowsayAppCtrl.speak(cowsayAppCtrl.text) }}
         </pre>
 
-        <input type="text" ng-model="cowsayAppCtrl.text">
-        <button ng-click="cowsayAppCtrl.logger(cowsayAppCtrl.text)">Log it!</button>
+          <form
+            ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)"
+            name="cowsayAppForm"
+            novalidate><!-- NOTE: space or no in novalidate?? -->
+
+            <seclect ng-model="cowsayAppCtrl.current">
+              <option ng-reapeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">
+                {{ cowfile }}
+              </option>
+            </select>
+
+          <input type="text" ng-model="cowsayAppCtrl.text" required>
+          <button type="submit">Speak!</button>
+
+          <div ng-show="cowsayAppCtrl.spoken" class="history">
+            <pre>
+              {{ cowsayAppCtrl.spoken }}
+            </pre>
+            <button type="button" ng-click="cowsayAppCtrl.undo()">Undo</button>
+          </div>
+        </form>
+
 
       </section>
 
-      <section class="container" ng-controller="CowsayAppController">
+      <!-- from Lab 20 -->
+      <!-- <section class="container" ng-controller="CowsayAppController">
 
         <h2>Two-Way Data Binding</h2>
 
         <p class="text-binder">{{ cowsayAppCtrl.bindText }}</p>
         <input type="text" ng-model="cowsayAppCtrl.bindText">
 
-      </section>
+      </section> -->
 
     </main>
   </body>
