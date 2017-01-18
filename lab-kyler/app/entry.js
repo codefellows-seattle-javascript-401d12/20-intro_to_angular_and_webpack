@@ -19,25 +19,29 @@ function cowsayController($log) {
   });
 
   this.title = 'CowCreater 1000';
-  this.history = [{ text: 'I moo 4 u', f: 'default' }];
+  this.currentArt = { text: 'I moo 4 u', f: 'default' };
+  this.history = [];
 
   this.undo = function() {
     $log.debug('cowsayCtrl.undo()');
 
-    if(this.history.length > 1) return this.history.pop();
+    if(this.history.length > 0) {
+      this.currentArt = this.history.pop();
+      return 1;
+    }
     return 0;
   };
 
-  this.currentArt = function() {
-    $log.debug('cowsayCtrl.currentArt()');
+  this.getCurrentArt = function() {
+    $log.debug('cowsayCtrl.getCurrentArt()');
 
-    return cowsay.say({ text: this.history[this.history.length-1].text, f: this.history[this.history.length-1].f });
+    return cowsay.say({ text: this.currentArt.text || 'BLANK', f: this.currentArt.f });
   };
 
-  this.saveCow = function(inputText) {
-    $log.debug('cowsayCtrl.newCow()');
+  this.saveCow = function() {
+    $log.debug('cowsayCtrl.saveCow()');
 
-    return this.history.push({text: inputText, f: this.currentCow});
+    return this.history.push( {text: this.currentArt.text, f: this.currentArt.f} );
   };
 
   this.logger = function(input) {
