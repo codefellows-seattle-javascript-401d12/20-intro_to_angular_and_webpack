@@ -44,9 +44,4 @@ function cowsayController($log) {
     return this.history.push( {text: this.currentArt.text, f: this.currentArt.f} );
   };
 
-  this.logger = function(input) {
-    $log.debug('cowsayCtrl.logger()');
-    $log.log(input);
-  };
-
 }

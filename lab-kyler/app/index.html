@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="cowsayApp">
   <head>
-    <title>Sorry about the colors!</title>
+    <title>Oh no</title>
   </head>
   <body>
     <main>
       <section class="container"
       ng-controller="cowsayController as cowsayCtrl">
         <h1 align=center>{{ cowsayCtrl.title }}</h1>
+        <p>I AM TRULY SORRY FOR HOW UGLY THIS IS</p>
         <form
           ng-submit="cowsayCtrl.saveCow()"
           name="cowsayForm"
@@ -22,19 +23,13 @@
         </form>
         <button ng-click="cowsayCtrl.undo()">Undo</button>
 
-        <pre>
-          {{ cowsayCtrl.getCurrentArt() }}
-        </pre>
+        <pre>{{ cowsayCtrl.getCurrentArt() }}</pre>
         <hr>
-          {{ cowsayCtrl.history }}
+        Cow History:<br>
+        <li ng-repeat="historyItem in cowsayCtrl.history" value="{{ historyItem }}">
+          {{ historyItem }}
+        </li>
 
-        <crazy-button ng-click="cowsayCtrl.logger(cowsayCtrl.currentText)">Log It!</button>
-
-      </section>
-      <section class="container" ng-controller="cowsayController as cowsayCtrl">
-        <h2>Text preview area:</h2>
-        <p class="text-binder">{{ cowsayCtrl.bindText }}</p>
-        <input type="text" ng-model="cowsayCtrl.bindText">
       </section>
     </main>
   </body>
