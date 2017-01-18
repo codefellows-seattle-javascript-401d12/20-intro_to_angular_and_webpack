@@ -38,3 +38,24 @@ function CowsayController($log) {
     this.spoken = this.history[this.history.length - 1] || '';
   };
 }
+
+cowsayApp.controller('NavController', ['$log', NavController]);
+
+function NavController($log) {
+  $log.debug('NavController');
+
+  this.routes = [
+    {
+      name: 'home',
+      url: '/home'
+    },
+    {
+      name: 'about',
+      url: '/about-us'
+    },
+    {
+      name: 'account',
+      url: '/account'
+    }
+  ];
+}
