@@ -5,10 +5,10 @@
   </head>
   <body>
     <main>
-      <section ng-controller="CowsayController as cowsayCtrl">
+      <section ng-init ="cowsayCtrl.currentCow = 'ghostbusters'" ng-controller="CowsayController as cowsayCtrl">
         <h2>{{cowsayCtrl.title}}</h2>
 
-        <select>
+        <select ng-model="cowsayCtrl.currentCow">
           <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{cow}}">
             {{cow}}
           </option>

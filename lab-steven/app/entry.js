@@ -20,6 +20,6 @@ function CowsayController($log) {
 
   this.speak = function(message) {
     $log.debug('cowsayCtrl.speak');
-    return cowsay.say({text: message || 'Tell me something to say.', f: 'ghostbusters'});
+    return cowsay.say({text: message || 'Tell me something to say.', f: this.currentCow});
   };
 }
