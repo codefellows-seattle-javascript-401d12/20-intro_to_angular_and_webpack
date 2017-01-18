@@ -37,4 +37,10 @@ function CowsayController($log) {
     $log.debug('log()');
     $log.log(input);
   };
+
+  this.undo = function() {
+    $log.debug('undo()');
+    this.history.pop();
+    this.spoken = this.history[this.history.length - 1] || '';
+  };
 }
