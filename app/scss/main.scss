@@ -61,6 +61,12 @@ pre {
   display: inline-block;
 }
 
+h1 {
+  float: left;
+  padding: 2vw;
+  font-weight: bold;
+}
+
 h2 {
   font: 7vw $brand-font-secondary;
   text-align: center;
@@ -96,9 +102,33 @@ h3 {
   margin-top: $gutter-lg;
 }
 
+li {
+  display: inline;
+  margin: $gutter-std;
+
+  &:hover {
+    background: $btn-hover;
+    padding: $gutter-std;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $brand-tertiary;
+}
+
+header {
+  background: $brand-secondary;
+}
+
+nav {
+  text-align: right;
+  padding: $gutter-std
+}
+
 // ==== App Styles ==== //
 .container {
-  width: $box-max;
   margin: 0 auto;
   background: $brand-primary;
   padding: $gutter-sm;
