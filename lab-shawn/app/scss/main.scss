@@ -38,8 +38,15 @@ nav{
   background: $nav-bg;
   color: $white;
   @include box-shadow(2px, 2px, 2px, 1px, rgba(0, 0, 0, 0.2));
-
-
+  h2{
+    float:left;
+    margin: $gutter-small/2;
+    font-weight: bold;
+  }
+  ul{
+    width: 100%;
+    text-align: right;
+  }
   li{
     display: inline-block;
     margin: $gutter-small;
@@ -77,19 +84,23 @@ form{
   border: 1px dotted $brand-primary / .8;
   margin-bottom: $gutter-small;
 
+  h3{
+    margin-left: $gutter-std;
+  }
 }
 
 button {
   font-size: 2vw;
   width: $box-std;
   padding: 2% 0;
-  margin-left: $gutter-std;
+  margin: $gutter-std;
   background: $btn-primary * 2;
   color: $white;
   border: none;
   border-radius: $border-radius;
   cursor: pointer;
   transition: 350ms all;
+  margin-top: $gutter-small;
 
 
   &:hover{
@@ -100,12 +111,12 @@ input[type="text"] {
   border: none;
   border-radius: $border-radius;
   background: $white;
-  margin: $gutter-std;
+  margin: $gutter-small $gutter-std ($gutter-std * 2) ;
   width: $box-std;
 }
 
 select{
-  margin-left: $gutter-std ;
+  margin: $gutter-small $gutter-std ($gutter-std * 2) ;
   width: $box-std;
   font-size: 2vw;
 }
