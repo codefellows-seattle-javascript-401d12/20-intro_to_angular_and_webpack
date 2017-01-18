@@ -26,4 +26,4 @@ function CowsayController($log, $scope) {
     $log.debug('cowsayControl logger');
     $log.log(input);
   };
-};
+}
