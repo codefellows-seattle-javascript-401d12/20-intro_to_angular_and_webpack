@@ -4,28 +4,37 @@
     <title>Geoff's Cowville</title>
   </head>
   <body>
-    <main>
-      <section
-        class="container"
-        ng-controller="CowsayController as cowsayCtrl"
-        >
+    <main ng-controller="CowsayController as cowsayCtrl">
+      <header>
         <h2>{{ cowsayCtrl.title }}</h2>
-        <pre class="cow">
-          {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+      </header>
+      <section class="container">
+        <pre class="cow">{{ cowsayCtrl.speak(cowsayCtrl.text) }}
         </pre>
         <form name="cowsayForm"
           ng-submit="cowsayCtrl.save()"
           novalidate
           >
+          <select ng-model="cowsayCtrl.current">
+            <option
+              ng-repeat="cowfile in cowsayCtrl.cowfiles"
+              value="{{ cowfile }}"
+              >
+              {{ cowfile }}
+            </option>
+          </select>
           <input type="text" ng-model="cowsayCtrl.text">
 
           <button type="submit">Save</button>
         </form>
         <div ng-show="cowsayCtrl.last()" class="history">
-          <pre class="cow">
-            {{ cowsayCtrl.speak(cowsayCtrl.last()) }}
+          <pre class="cow">{{ cowsayCtrl.last() }}
           </pre>
-          <button ng-click="cowsayCtrl.back()">Back</button>
+          <button id="btn-back"
+            ng-click="cowsayCtrl.back()"
+            >
+            Back
+          </button>
         </div>
       </section>
     </main>

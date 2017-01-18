@@ -15,12 +15,17 @@ function CowsayController($log) {
 
   this.title = 'Geoff\'s Cowville!';
   this.history = [];
+  cowsay.list( (err, cowfiles) => {
+    this.cowfiles = cowfiles;
+    this.current = 'dragon';
+  });
 
   this.speak = function(input) {
     $log.debug('cowsayCtrl.speak()');
-    return cowsay.say({ text: input || 'MOOOOO-OOOO' });
-    //Q: Can we set other params for cowsay?
-    //Q: How do we connect those params to a value from the GUI?
+    return cowsay.say({
+      text: input || 'Whooooooshhh!',
+      f: this.current
+    }).trim();
   };
 
   this.logger = function(input) {
@@ -31,15 +36,19 @@ function CowsayController($log) {
   this.save = function() {
     $log.debug('cowsayCtrl.save()', this.text);
     if(this.text) {
-      this.history.push(this.text);
+      this.history.push({
+        text: this.text,
+        f: this.current
+      });
     }
   };
 
   this.last = function() {
-    $log.debug('cowsayCtrl.last()', this.history);
+    $log.debug('cowsayCtrl.last()');
     let len = this.history.length;
     if(len == 0) return;
-    return this.history[len - 1];
+    let item = this.history[len - 1];
+    return cowsay.say(item).trim();
   };
 
   this.back = function() {
