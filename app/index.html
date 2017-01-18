@@ -5,7 +5,7 @@
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController">
+      <section class="container" ng-controller="CowsayController as cowsayCtrl">
         <h2>{{ cowsayCtrl.title }}</h2>
         <pre class="cow">
           {{ cowsayCtrl.speak(cowsayCtrl.text) }}
