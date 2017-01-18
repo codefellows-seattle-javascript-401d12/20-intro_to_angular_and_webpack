@@ -1,8 +1,12 @@
 <html ng-app="cowsayApp">
-    <head>
-      <title>Welcome to Cowville!</title>
-    </head>
-    <body>
-      <p>hello</p>
-    <script type="text/javascript" src="bundel.js"></script></body>
+  <head>
+    <title>Welcome cowville!</title>
+  </head>
+  <body>
+    <main>
+       <section class="container" ng-controller="CowsayController">
+          <h2>{{ cowsayCtrl.title }}</h2>
+       </section>
+    </main>
+  <script type="text/javascript" src="bundel.js"></script></body>
 </html>
