@@ -2,10 +2,12 @@
   "name": "lab-jinho",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "karma.conf.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
-    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "test-watch": "./node_modules/karma/bin/karma start",
+    "test": "./node_modules/karma/bin/karma start --single-run"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,12 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-webpack": "^2.0.1",
     "webpack-dev-server": "^1.16.2"
   }
 }
