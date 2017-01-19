@@ -1,33 +1,32 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 21 - Angular Controllers
+![cf](https://i.imgur.com/7v5ASc8.png) Lab 22 - Testing Angular Controllers
 ======
 
 ## To Submit this Assignment
-  * create a new branch and work off of the same fork that you made yesterday
+  * create a new branch and work off of the same fork that you made on Monday
   * push to your repository
   * submit a pull request to this repository
   * submit a link to your PR in canvas
   * write a question and observation on canvas
 
 ## Include
-  * ~~`.eslintrc`~~
-  * ~~`.babelrc`~~
-  * ~~`.gitignore`~~
-  * ~~`package.json`~~
-    * ~~create an npm `watch` script for running~~ ~~`webpack-dev-server --inline --hot`~~
-    * ~~create an npm `lint` script for linting your JS with `eslint`~~
+  * `.eslintrc`
+  * `.babelrc`
+  * `.gitignore`
+  * `package.json`
+    * create an npm `watch` script for running `webpack-dev-server --inline --hot`
+    * create an npm `lint` script for linting your JS with `eslint`
+    * create an npm `test` script for running karma and all associated tests
+    * create an npm `test-watch` script for running karma on file system changes
   * **ignore the build directory**
-  * ~~`webpack.config.js`~~
+  * `webpack.config.js`
+  * `karma.config.js`
 
 ## Description
-  * ~~refactor the previous lab to use the **controller as** syntax~~
-  * ~~add a `.babelrc` file and use the **babel loader** on your JS files~~
-  * add a form and submit button that will be used to save the current state of the cow's text
-    * use the `ng-submit` directive to control the form's on-submit functionality
-    * add a button that uses the `ng-click` directive to populate a second `pre` tag with the current `pre` tag state
-  * add a button that uses the `ng-click` directive to create an **undo** effect
-    * whenever this button is clicked, it should reset the second `pre` tag with the content it last showed
-  * add a select menu that uses the `ng-repeat` directive
-    * this should be used to populate the select menu with the names of all `cowsay` files
-      * hint: `cowsay.list((err, list) => {})`
-  * when a `cowsay` filename is selected from the menu, have the first `pre` tag use the selected cowfile
-  * use the `ng-show` directive to show the second `pre` tag **only** if the history state is not empty
+  * Use the `karma init karma.conf.js` CLI tool to generate a new karma configuration file
+    * *include this file in your assignment submission*
+  * Write a test that checks for default properties set by your controller(s)
+  * Write a series of tests that check your controller methods for expected functionality
+
+## Bonus
+  * **2pts:** Create a series of `scss` partials for your `_base` styles, `_reset` stylesheet, and `_main` styles
+    * these should be imported (`@import`) into a `core.scss` file that will be compiled into a stylesheet for your application
