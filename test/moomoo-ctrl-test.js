@@ -54,7 +54,6 @@ describe('MooMooController', function() {
       this.mooMooCtrl.speak('TWO');
       let expected = cowsay.say({ text: 'ONE', f: 'stimpy'});
       this.mooMooCtrl.undo();
-      console.log(this.mooMooCtrl.spoken);
       expect(this.mooMooCtrl.spoken).toEqual(expected);
     });
   });
