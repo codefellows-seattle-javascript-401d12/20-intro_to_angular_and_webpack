@@ -1,7 +1,6 @@
 'use strict';
 
-require('./scss/reset.scss');
-require('./scss/main.scss');
+require('./scss/core.scss');
 
 const angular = require('angular');
 const cowsay = require('cowsay-browser');
@@ -24,7 +23,7 @@ function MooMooController($log) {
 
   this.update = function(input) {
     $log.debug('mooMooCtrl.update()');
-    return cowsay.say({ text: input || 'Mooooooo', f: this.current })
+    return cowsay.say({ text: input || 'Mooooooo', f: this.current });
   };
 
   this.speak = function(input) {
