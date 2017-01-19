@@ -48,13 +48,12 @@ describe('Cowsay Controller', function() {
     });
   });
 
-  // describe('#undo', () => {
-  //   it('should undo a cow', () => {
-  //     // let expected =
-  //     // this.
-  //     // expect()
-  //     // expect)
-  //   });
-  // });
+  describe('#undo', () => {
+    it('should undo a cow', () => {
+      this.cowsayAppCtrl.speak('testing the undo');
+      this.cowsayAppCtrl.undo();
+      expect(this.cowsayAppCtrl.history.length).toEqual(0);
+    });
+  });
 
 });
