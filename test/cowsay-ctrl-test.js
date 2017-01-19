@@ -49,7 +49,12 @@ describe('Cowsay Controller', function() {
 
   describe('#undo', () => {
     it('should show previous text or remove spoken cow', () => {
-      
-    })
-  })
+      let result = cowsay.say({ text: 'testing', f: this.cowsayCtrl.current});
+      this.cowsayCtrl.speak('testing');
+      this.cowsayCtrl.speak('undo this');
+      this.cowsayCtrl.undo();
+      expect(this.cowsayCtrl.spoken).toEqual(result);
+
+    });
+  });
 });
