@@ -14,6 +14,7 @@ module.exports = function(config) {
     exclude: [
     ],
     preprocessors: {
+      'test/**/*-test.js': ['webpack']
     },
     reporters: ['progress'],
     port: 9876,
