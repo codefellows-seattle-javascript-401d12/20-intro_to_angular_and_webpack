@@ -10,7 +10,7 @@ describe('Cowsay Controller', function() {
   beforeEach(() => {
     angular.mock.module('cowsayApp');
     angular.mock.inject($controller => {
-      this.cowsayAppCtrl = new $controller('CowsayAppController'); // this name maps back to what we called our controller
+      this.cowsayAppCtrl = new $controller('CowsayAppController');
     });
   });
 
@@ -22,13 +22,13 @@ describe('Cowsay Controller', function() {
 
   it('history property should be an empty array', () => {
     expect(Array.isArray(this.cowsayAppCtrl.history)).toBe(true);
-  }); // this is how we set up general test
+  });
 
   it('list of cowfiles should show proper cowfiles', () => {
     cowsay.list((err, list) => {
       expect(this.cowsayAppCtrl.cowfiles).toEqual(list);
       expect(this.cowsayAppCtrl.current).toEqual(list[0]);
-    }); // if we request list we are testing that we get back a list
+    });
   });
 
   describe('#update', () => {
