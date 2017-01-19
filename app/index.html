@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="cowsayApp">
-<head>
-  <title>Welcome to Cow Speaks!</title>
-</head>
-<body>
-  <main>
+  <head>
+    <title>Welcome to Cow Speaks!</title>
+  </head>
+  <body>
     <header>
       <nav ng-controller="NavController as navCtrl">
         <ul>
@@ -15,14 +14,15 @@
       </nav>
       <h2 ng-controller="CowsayController as cowsayCtrl">{{ cowsayCtrl.title }}</h2>
     </header>
-    <section class="container"
-    ng-controller="CowsayController as cowsayCtrl"
-    ng-init="cowsayCtrl.current = 'doge'">
-      <section class="pretext">
-        <pre>
-          {{ cowsayCtrl.update(cowsayCtrl.text) }}
-        </pre>
-      </section>
+    <main>
+      <section class="container"
+      ng-controller="CowsayController as cowsayCtrl"
+      ng-init="cowsayCtrl.current = 'doge'">
+        <section class="pretext">
+          <pre>
+            {{ cowsayCtrl.update(cowsayCtrl.text) }}
+          </pre>
+        </section>
       <section class="options">
         <span class="cowtext">Select a cowfile</span>
         <form
@@ -34,26 +34,26 @@
             {{ cowfile }}
           </option>
         </select>
-      <span class="cowtext">What does it say?</span>
-      <input type="text" ng-model="cowsayCtrl.text" placeholder="Start typing...">
-      <span class="cowtext">View it!</span>
-      <div class="button-container">
-        <button type="submit">Say it!</button>
-      </div>
-    </form>
-    </section>
+        <span class="cowtext">What does it say?</span>
+        <input type="text" ng-model="cowsayCtrl.text" placeholder="Start typing...">
+        <span class="cowtext">View it!</span>
+        <div class="button-container">
+          <button type="submit">Say it!</button>
+        </div>
+        </form>
+      </section>
     <!-- <div class="clearfix"></div> -->
-    <section class="pretext">
-      <div ng-show="cowsayCtrl.spoken" class="history">
-        <pre>
-          {{ cowsayCtrl.spoken }}
-        </pre>
-      </div>
-    </section>
-    <section class="undo-button-container">
+      <section class="pretext">
+        <div ng-show="cowsayCtrl.spoken" class="history">
+          <pre>
+            {{ cowsayCtrl.spoken }}
+          </pre>
+        </div>
+      </section>
+      <section class="undo-button-container">
         <button type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
-    </section>
-  </section>
-</main>
-</body>
+      </section>
+      </section>
+    </main>
+  </body>
 </html>

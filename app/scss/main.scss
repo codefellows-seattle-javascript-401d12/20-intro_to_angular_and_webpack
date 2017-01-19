@@ -67,6 +67,7 @@ pre {
   font-size: 1vw;
   border: solid;
   float: left;
+  height: 24vw;
 }
 
 .container {
@@ -75,12 +76,12 @@ pre {
 
   .pretext {
     float: left;
-    width: 45%;
+    width: 65%;
   }
 
   .options {
     float: left;
-    width: 50%;
+    width: 35%;
   }
 }
 
@@ -157,6 +158,6 @@ form {
 
 .undo-button-container {
   float: left;
-  width: 50%;
+  width: 35%;
   margin-top: 26%
 }
