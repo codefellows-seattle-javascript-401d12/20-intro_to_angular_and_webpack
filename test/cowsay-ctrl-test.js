@@ -45,4 +45,14 @@ describe('Cowsay Controller', function() {
       expect(this.cowsayCtrl.history[0]).toEqual(expected);
     });
   });
+  describe('#undo', () => {
+    it('should return a cow that says the first speak', () => {
+      let expected = cowsay.say({ text: 'testing', f: this.cowsayCtrl.current});
+      this.cowsayCtrl.speak('testing');
+      this.cowsayCtrl.speak('second speak');
+      this.cowsayCtrl.undo();
+      expect(this.cowsayCtrl.history.length).toEqual(0);
+      expect(this.cowsayCtrl.spoken).toEqual(expected);
+    });
+  });
 });
