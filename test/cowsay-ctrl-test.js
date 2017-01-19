@@ -46,4 +46,14 @@ describe('Cowsay Controller', function() {
       expect(this.cowsayCtrl.history[0]).toEqual(expected);
     });
   });
+
+  describe('#undo', () => {
+    it('should return a cow that says testing', () => {
+      let expected = cowsay.say({text: 'testing', f: this.cowsayCtrl.current});
+      this.cowsayCtrl.speak('testing');
+      this.cowsayCtrl.speak('this should be popped off');
+      this.cowsayCtrl.undo();
+      expect(this.cowsayCtrl.spoken).toEqual(expected);
+    });
+  });
 });
