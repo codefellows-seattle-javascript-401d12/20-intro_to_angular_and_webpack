@@ -29,7 +29,6 @@ function CowsayController() {
   };
   this.undo = function() {
     this.history.pop();
-    console.log(this.history);
     this.spoken = this.history.pop() || '';
   };
 });
