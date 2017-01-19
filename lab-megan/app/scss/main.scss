@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background: $green;
+  background: $brand-primary;
 }
 
 main {
@@ -33,16 +33,16 @@ footer {
   font-size: 1.2vw;
   font-color: $black / 3;
   text-align: center;
-  background: $green;
   padding: $gutter-std;
+  margin: $gutter-std 0 0 0;
+  background: $brand-primary * 2;
 }
 
 h2 {
   font-size: 3vw;
-  // text-align: center;
   margin: $gutter-std 0;
   text-transform: lowercase;
-  color: #80BD50;
+  color: $brand-primary;
 }
 
 button {
@@ -53,8 +53,6 @@ button {
   cursor: pointer;
   transition: 350ms all;
   text-transform: uppercase;
-  // width: $box-std;
-  // margin: $gutter-sm;
 
   &:hover {
     background: $btn-hover;
@@ -63,24 +61,12 @@ button {
 
 input[type="text"] {
   border: none;
-  border: solid .1vw $black;
   border-radius: 3px;
-}
-
-select {
-  // TODO: style me
 }
 
 pre {
   font-family: monospace;
-  // padding: $gutter-std;
-  // margin: $gutter-std;
   background-color: $white;
-  border: solid gray 1px;
-}
-
-div {
-  border: 1px green solid;
 }
 
 p {
@@ -99,7 +85,8 @@ li {
 li a {
   text-decoration: none;
   font-size: 1.2vw;
-  text-transform: uppercase;;
+  text-transform: uppercase;
+  color: $white;
 }
 
 .clearfix {
@@ -108,14 +95,12 @@ li a {
 
 /*** app styles ***/
 
-
 .spoken-block {
   all: unset;
 }
 
 .form-element {
   display: block;
-  border: solid 1px blue;
   padding: $gutter-sm;
 }
 
@@ -123,14 +108,19 @@ li a {
   width: 60%;
   display: block;
   float: left;
-  border: solid red 1px;
   background: $white;
-  // margin: $gutter-std;
-  // padding: $gutter-std;
 }
 
 .to-the-right {
   width: 30%;
   display: inline-block;
   padding: $gutter-sm;
+}
+
+.thin-gray-line {
+  display: block;
+  height: 2px;
+  background: $brand-primary * 2;
+  margin: $gutter-std 0;
+  border-radius: 3px;
 }

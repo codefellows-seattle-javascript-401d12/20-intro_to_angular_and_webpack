@@ -13,7 +13,7 @@ cowsayApp.controller('CowsayAppController', ['$log', CowsayAppController]);
 function CowsayAppController($log) {
   $log.debug('CowsayAppControlller');
 
-  this.title = 'Cow Creator';
+  this.title = 'Cow Creator.';
   this.history = [];
 
   cowsay.list((err, cowfiles) => {
