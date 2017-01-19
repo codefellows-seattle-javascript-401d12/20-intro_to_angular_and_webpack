@@ -1,0 +1,139 @@
+// ******************* VARS ********************
+// ---- Colors ----
+$black: #000;
+$white: #fff;
+$burg: #821013;
+
+// ---- Fonts -----
+$freckle-face: 'Freckle Face', cursive;
+$luckiestGuy: 'Luckiest Guy', cursive;
+
+// ----- Sizes -----
+$box-standard: 50%;
+$gutter-standard: 5%;
+$gutter-small: $gutter-standard / 2;
+$margin-standard: 10%;
+
+// ********** global styles *********
+body {
+  font-family: $freckle-face;
+  font-size: 2vw;
+}
+
+
+.navbar {
+    font-family: $freckle-face;
+    height: 3.5vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $black;
+    ul {
+      margin-left: $gutter-standard - 1%;
+      li, a {
+        color: $burg;
+        display: inline;
+        text-decoration: none;
+        padding: $gutter-small/4;
+        &:hover {
+          color: $white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+a {
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 5vw;
+  text-align: center;
+  color: $burg;
+  margin-top: 3.5vw;
+  margin-bottom: $gutter-standard;
+  background: $black;
+  text-shadow: 1px 1px 1px $white;
+  border-radius: 3px;
+}
+
+button {
+  font-size: 2vw;
+  background: $black;
+  color: $white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-family: $freckle-face;
+  height: $box-standard;
+  width: auto;
+  cursor: pointer;
+  transition: 350ms all;
+  &:hover {
+    color: $burg;
+    background: $white;
+    font-weight: bold;
+  }
+}
+.row {
+  text-align: center;
+  height: 10%;
+  select {
+    position: relative;
+    left:auto;
+    right: auto;
+    display: inline;
+    height: 100%;
+    width: auto;
+    color: $white;
+    background: $black;
+    outline: none;
+    font-size: 2vw;
+  }
+}
+input[type='text'] {
+  margin: $gutter-small / 2;
+  height: 3vw;
+  width: 30vw;
+  font-size: 2.5vw;
+  background: $black;
+  color: $white;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+select {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+pre {
+  overflow: auto;
+  width: 100%;
+  font-family: monospace;
+  margin: $gutter-standard;
+  position: relative;
+  left: auto;
+  right:auto;
+}
+
+.container {
+  width: auto;
+  margin-left: 10%;
+}
+
+.text-binder {
+  border: solid $black 6px;
+  border-radius: 3px;
+  height: 15vw;
+  font-size: 3vw;
+  margin: $gutter-standard;
+  padding: 1vw;
+  color: $black;
+  text-shadow: .5px .5px .5px $burg;
+  background: $white;
+}
