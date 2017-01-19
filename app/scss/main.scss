@@ -129,6 +129,7 @@ button {
   left: 0%;
   pre{
    float: left;
+   margin-left: $gutter-sm * 3.5;
   }
   button{
    @extend form;
