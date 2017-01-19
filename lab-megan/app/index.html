@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <title>Welcome to Cowville</title>
+  </head>
+  <body>
+
+    <header>
+      <nav ng-controller="NavAppController as navAppCtrl">
+        <ul>
+          <li ng-repeat="route in navAppCtrl.routes"><a href="{{ link.url }}">{{ route.name }}</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="container" ng-controller="CowsayAppController as cowsayAppCtrl" ng-init="cowsayAppCtrl.current = 'squirrel'">
+
+        <form ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)" name="cowsayAppForm" novalidate>
+
+          <h2>{{ cowsayAppCtrl.title }}</h2>
+
+            <div class="preview">
+              <pre>{{ cowsayAppCtrl.update(cowsayAppCtrl.text) }}</pre>
+            </div>
+
+            <div class="to-the-right">
+              <div class="form-element">
+                <p>Select a cowfile.</p>
+                <select ng-model="cowsayAppCtrl.current">
+                  <option ng-repeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">{{ cowfile }}</option>
+                </select>
+              </div>
+              <div class="form-element">
+                <p>What does it say?</p>
+                <input type="text" ng-model="cowsayAppCtrl.text" required>
+              </div>
+              <div class="form-element">
+                <p>View it below!</p>
+                <button type="submit">Click To View</button>
+              </div>
+            </div>
+
+          <div class="clearfix"></div>
+
+          <div class="thin-gray-line"></div>
+
+          <h2>View It!</h2>
+
+          <div class="spoken-block" ng-show="cowsayAppCtrl.spoken">
+
+            <div class="preview">
+              <pre>{{ cowsayAppCtrl.spoken }}</pre>
+            </div>
+
+            <div class="to-the-right">
+              <button type="button" ng-click="cowsayAppCtrl.undo()">Undo This Cow!</button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </section>
+
+      <div class="clearfix"></div>
+
+    </main>
+
+    <footer>
+      <div class="footer">&copy; 2017 Cowtopia LLC</div>
+    </footer>
+
+  </body>
+</html>
