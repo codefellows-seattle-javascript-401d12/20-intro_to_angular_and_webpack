@@ -13,6 +13,8 @@
       </nav>
     </header>
 
+    <!-- <div class="clearfix"></div> -->
+
     <main>
 
       <section class="container" ng-controller="CowsayAppController as cowsayAppCtrl" ng-init="cowsayAppCtrl.current = 'squirrel'">
@@ -27,21 +29,24 @@
 
             <div class="to-the-right">
               <div class="form-element">
+                <p>Select a cowfile.</p>
                 <select ng-model="cowsayAppCtrl.current">
                   <option ng-repeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">{{ cowfile }}</option>
                 </select>
               </div>
               <div class="form-element">
+                <p>What does it say?</p>
                 <input type="text" ng-model="cowsayAppCtrl.text" required>
               </div>
               <div class="form-element">
-                <button type="submit">Speak!</button>
+                <p>View it below!</p>
+                <button type="submit">Click To View</button>
               </div>
             </div>
 
           <div class="clearfix"></div>
 
-          <h2>Other Header</h2>
+          <h2>View It!</h2>
 
           <div class="spoken-block" ng-show="cowsayAppCtrl.spoken">
 
@@ -50,7 +55,7 @@
             </div>
 
             <div class="to-the-right">
-              <button type="button" ng-click="cowsayAppCtrl.undo()">Undo!</button>
+              <button type="button" ng-click="cowsayAppCtrl.undo()">Undo This Cow!</button>
             </div>
 
           </div>
@@ -64,7 +69,7 @@
     </main>
 
     <footer>
-      <div class="footer">&copy; 2017</div>
+      <div class="footer">&copy; 2017 Cowtopia LLC</div>
     </footer>
 
   </body>

@@ -26,33 +26,35 @@ main {
   width: 80%;
   margin: 0 auto;
   min-width: 360px;
-  max-width: 960px;
+  max-width: 620px;
 }
 
 footer {
-  font-size: 1vw;
+  font-size: 1.2vw;
+  font-color: $black / 3;
   text-align: center;
   background: $green;
+  padding: $gutter-std;
 }
 
 h2 {
   font-size: 3vw;
-  text-align: center;
-  margin-bottom: $gutter-std;
-  text-transform: uppercase;
+  // text-align: center;
+  margin: $gutter-std 0;
+  text-transform: lowercase;
   color: #80BD50;
 }
 
 button {
-  // float: right;
-  // width: $box-std;
-  // padding: 2% 0;
   background: $btn-primary / 3;
   color: $white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  // transition: 350ms all;
+  transition: 350ms all;
+  text-transform: uppercase;
+  // width: $box-std;
+  // margin: $gutter-sm;
 
   &:hover {
     background: $btn-hover;
@@ -60,10 +62,6 @@ button {
 }
 
 input[type="text"] {
-  // float: left;
-  // width: $box-std + 10%;
-  // margin-right: $gutter-std / 2;
-  // padding: 2%;
   border: none;
   border: solid .1vw $black;
   border-radius: 3px;
@@ -75,13 +73,33 @@ select {
 
 pre {
   font-family: monospace;
-  // margin: $gutter-std;
   // padding: $gutter-std;
+  // margin: $gutter-std;
   background-color: $white;
-  // display: block;
-  // float: left;
   border: solid gray 1px;
-  // width: 60%;
+}
+
+div {
+  border: 1px green solid;
+}
+
+p {
+  margin: $gutter-sm;
+}
+
+ul {
+  text-align: right;
+}
+
+li {
+  display: inline-block;
+  margin: $gutter-sm;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 1.2vw;
+  text-transform: uppercase;;
 }
 
 .clearfix {
@@ -90,11 +108,6 @@ pre {
 
 /*** app styles ***/
 
-div {
-  // border: 1px solid orange;
-  border: 1px lightgray solid;
-  // display: block;
-}
 
 .spoken-block {
   all: unset;
@@ -102,7 +115,8 @@ div {
 
 .form-element {
   display: block;
-  border: solid 1px lightgray;
+  border: solid 1px blue;
+  padding: $gutter-sm;
 }
 
 .preview {
@@ -110,73 +124,13 @@ div {
   display: block;
   float: left;
   border: solid red 1px;
+  background: $white;
+  // margin: $gutter-std;
+  // padding: $gutter-std;
 }
 
-// pre {
-//   // width: $box-std;
-//   width: 60%;
-//   background: $white;
-//   // float: left;
-//   border: solid gray 1px;
-//   // height: 200px;
-//   float: left;
-//   display: block;
-// }
-
-// .to-the-right {
-//   width: 40%;
-//   display: block;
-// }
-
-// .container {
-//   // border: 1px solid red;
-//   // width: 60%;
-//   // width: 80%;
-//   // margin: auto;
-// }
-//
-// .whole {
-//   width: $box-std * 2;
-// }
-
-// .half-left {
-//   // width: $box-std;
-//   // float: left;
-// }
-//
-// .half-right {
-//   // width: $box-std;
-//   border: solid gray 1px;
-//   vertical-align: top;
-//   // float: right;
-//   // float: right;
-// }
-
-/* from lab 20 */
-/*** app styles ***/
-
-// .container {
-//   float: left;
-//   width: $box-std;
-//   margin: 2%;
-//   background: $white;
-//   padding: 2%;
-//   border: solid .1vw $black;
-//   border-radius: 3px;
-// }
-//
-// .text-binder {
-//   height: 15vw;
-//   font-size: 3vw;
-//   margin: $gutter-std;
-//   padding: 1vw;
-//   color: $white;
-//   background: $brand-primary / 2;
-//   border: solid .25vw $brand-primary;
-//   border-radius: 3px;
-//
-//   + input {
-//     width: $box-std * 2;
-//     margin: $gutter-std;
-//   }
-// }
+.to-the-right {
+  width: 30%;
+  display: inline-block;
+  padding: $gutter-sm;
+}
