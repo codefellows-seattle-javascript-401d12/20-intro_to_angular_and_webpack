@@ -21,6 +21,19 @@ body {
   background: $brand-secondary;
 }
 
+nav ul {
+  width: 30vw;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 2%
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
 .title {
   text-align: center;
   font-weight: 700;
@@ -61,6 +74,10 @@ button {
   &:hover {
     background: $button-hover;
   }
+}
+
+.cowpen {
+  margin-top: 2.5%;
 }
 
 .cow {
