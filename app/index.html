@@ -6,12 +6,12 @@
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController">
+      <section class="container cowpen" ng-controller="CowsayController">
         <h2 class="title">{{ cowsayControl.title }}</h2>
         <pre class="cow">
           {{ cowsayControl.speak(cowsayControl.text) }}
         </pre>
-        <form>
+        <form class="cowform">
           <input type="text"
           ng-model="cowsayControl.text"
           autofocus>
