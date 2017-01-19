@@ -22,6 +22,17 @@ body {
   background: $brand-primary;
 }
 
+header {
+  color: $white;
+  background: $black;
+  padding: $pad-reg + 1%;
+}
+
+h1 {
+  float: left;
+}
+
+
 h2 {
   color: $white;
   font-size: 3vw;
@@ -30,13 +41,46 @@ h2 {
   margin-bottom: $gutter-std;
 }
 
+h3 {
+  clear: both;
+  color: $white;
+  font-size: 2vw;
+  margin-left: $gutter-lg;
+  margin-bottom: 1%;
+}
+
+h4 {
+  float: left;
+  color: $white;
+  font-size: 1.5vw;
+  margin-left: $gutter-std + 2%;
+  margin-bottom: 1%;
+}
+
+select {
+  float: left;
+  width: $box-sm;
+  margin-left: $gutter-std + 2%;
+  margin-bottom: $gutter-std;
+}
+
+input[type="text"] {
+  float: left;
+  width: $box-sm;
+  border: none;
+  border-radius: 3px;
+  margin-left: $gutter-std + 2%;
+  margin-bottom: $gutter-std;
+}
+
 button {
-  width: $box-std - 10%;
-  padding: $pad-reg 0;
+  float: left;
+  width: $box-sm;
   background: $btn-primary;
   color: $white;
   border: none;
   border-radius: 3px;
+  margin-left: $gutter-std + 2%;
   cursor: pointer;
   transition: 350ms all;
 
@@ -45,24 +89,10 @@ button {
   }
 }
 
-input[type="text"] {
-  width: $box-std - 5%;
-  margin-left: $gutter-lg + 3.5%;
-  margin-right: $gutter-std / 2;
-  padding: $pad-reg;
-  border: none;
-  border-radius: 3px;
-}
-
 pre {
-  width: $box-lg - 22.5%;
+  width: $box-lg;
   margin: $ctr;
-  overflow: hidden;
-}
-
-.cow {
   font-family: monospace;
-  color: $white;
 }
 
 p {
@@ -74,14 +104,46 @@ p {
   white-space: normal;
 }
 
-.container {
-  width: $box-lg - 20%;
-  margin: $ctr;
+// <<<< app styles >>>>
 
-  .inner-contain {
-    background: $black;
-    border: $btn-hover ridge 1vw;
-    border-radius: 3px;
-    padding-bottom: $pad-reg;
+nav {
+  width: 100%;
+  text-align: right;
+
+  li {
+    display: inline;
+    margin-left: 4vw;
+
+    a {
+      color: inherit;
+      font-size: 1.5vw;
+      text-decoration: none;
+
+      &:hover {
+        color: $btn-hover;
+      }
+    }
   }
+}
+
+.cow {
+  color: $white;
+}
+
+.container {
+  width: $box-lg + 10%;
+  margin: $ctr;
+}
+
+.inner-contain {
+  float: left;
+  width: $box-std + 10%;
+  height: 12em;
+  overflow: auto;
+  background: $black;
+  margin-left: $gutter-std + 5%;
+  margin-bottom: $gutter-std;
+  border: $btn-hover ridge 1vw;
+  border-radius: 3px;
+  padding-bottom: $pad-reg;
 }

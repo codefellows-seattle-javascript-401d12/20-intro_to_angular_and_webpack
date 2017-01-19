@@ -1,30 +1,64 @@
 <!DOCTYPE html>
 <html ng-app="cowsayApp">
   <head>
-    <title>Angular Intro</title>
+    <title>Cowception</title>
   </head>
   <body>
     <main>
-      <section class="container" ng-controller="CowsayController">
+      <header>
+        <h1>Cowception</h1>
+        <nav ng-controller="NavController as navCtrl">
+          <ul>
+            <li ng-repeat="route in navCtrl.routes">
+              <a href="{{route.url}}">{{route.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section
+      class="container"
+      ng-controller="CowsayController as cowsayCtrl"
+      ng-init="cowsayCtrl.current = 'cower'">
         <h2>{{cowsayCtrl.title}}</h2>
 
-        <section class="inner-contain">
+        <h3>Create a cow illustration.</h3>
+        <div class="inner-contain">
           <pre class="cow">
-            {{cowsayCtrl.speak(cowsayCtrl.text)}}
+            {{cowsayCtrl.update(cowsayCtrl.text)}}
           </pre>
+        </div>
 
-          <input type="text" ng-model="cowsayCtrl.text">
-          <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log It</button>
-        </section>
-      </section>
+        <form
+        ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+        name="cowsayForm"
+        novalidate>
+          <h4>Select a cowfile.</h4>
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{cowfile}}">
+              {{cowfile}}
+            </option>
+          </select>
 
-      <section class="container" ng-controller="CowsayController">
-        <h2>Two-Way Data Binding!</h2>
-        <section class="inner-contain">
-          <p class="text-binder">{{cowsayCtrl.bindText}}</p>
-          <input type="text" ng-model="cowsayCtrl.bindText">
-          <button ng-click="cowsayCtrl.logger(cowsayCtrl.bindText)">Log It</button>
-        </section>
+          <h4>Say moo?</h4>
+          <input type="text" ng-model="cowsayCtrl.text" required>
+
+          <h4>View it!</h4>
+          <button type="submit">View!</button>
+
+          <h3 ng-show="cowsayCtrl.spoken">Your cow illustration!</h3>
+          <div ng-show="cowsayCtrl.spoken" class="inner-contain">
+            <pre class="cow">
+              {{cowsayCtrl.spoken}}
+            </pre>
+          </div>
+
+          <h4 ng-show="cowsayCtrl.spoken">Trash it!</h4>
+          <button
+          ng-show="cowsayCtrl.spoken"
+          type="button"
+          ng-click="cowsayCtrl.undo()">Undo!</button>
+        </form>
       </section>
     </main>
   </body>

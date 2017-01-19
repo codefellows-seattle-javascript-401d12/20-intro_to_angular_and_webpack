@@ -8,23 +8,54 @@ const cowsay = require('cowsay-browser');
 
 const cowsayApp = angular.module('cowsayApp', []);
 
-cowsayApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
+cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 
-function CowsayController($log, $scope) {
+function CowsayController($log) {
   $log.debug('CowsayController');
 
-  let cowsayCtrl = $scope.cowsayCtrl = {};
+  this.title = 'Welcome to Cowception!';
+  this.history = [];
 
-  cowsayCtrl.title = 'Welcome to Angular JS!';
+  cowsay.list((err, cowfiles) => {
+    this.cowfiles = cowfiles;
+    this.current = this.cowfiles[0];
+  });
 
-  cowsayCtrl.speak = function(input) {
+  this.update = function(input) {
+    $log.debug('cowsayCtrl.update()');
+    return cowsay.say({text: input || 'Check this out!', f: this.current});
+  };
+
+  this.speak = function(input) {
     $log.debug('cowsayCtrl.speak()');
-
-    return cowsay.say({text: input || 'Beware of night cow...'});
+    this.spoken = this.update(input);
+    this.history.push(this.spoken);
   };
 
-  cowsayCtrl.logger = function(input) {
-    $log.debug('cowsayCtrl.logger()');
-    $log.log(input);
+  this.undo = function() {
+    $log.debug('cowsayCtrl.undo()');
+    this.history.pop();
+    this.spoken = this.history[this.history.length - 1] || '';
   };
+}
+
+cowsayApp.controller('NavController', ['$log', NavController]);
+
+function NavController($log) {
+  $log.debug('NavController');
+
+  this.routes = [
+    {
+      name: 'home',
+      url: '/home'
+    },
+    {
+      name: 'about',
+      url: '/about-us'
+    },
+    {
+      name: 'account',
+      url: '/account'
+    }
+  ];
 }
