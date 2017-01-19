@@ -29,4 +29,14 @@ describe('Cowsay Controller', function() {
       });
     });
   });
+
+  describe('#update', () => {
+    it('should return a cow that says testing', () => {
+      let expected = cowsay.say({text: 'testing', f: this.cowsayCtrl.current});
+      let result = this.cowsayCtrl.update('testing');
+      expect(result).toEqual(expected);
+    });
+  });
+
+  
 });
