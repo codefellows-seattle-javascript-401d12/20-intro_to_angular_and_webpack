@@ -1,0 +1,90 @@
+// VARS
+
+$brand-primary: #e2f0d6;
+$brand-secondary: #95ab63;
+$button-primary: $brand-primary / 2;
+$button-hover: #00037b;
+$input-background: #f6ffe0;
+$black: #000;
+$white: #fff;
+$box-std: 40%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+$gutter-extra-sm: 1%;
+
+
+// GLOBAL STYLES
+
+body {
+  font-family: monospace;
+  font-size: 2vw;
+  background: $brand-secondary;
+}
+
+nav ul {
+  width: 30vw;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 2%
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3vw;
+  margin: $gutter-extra-sm;
+}
+
+.container {
+  background: $brand-primary;
+  margin: $gutter-std;
+  padding: $gutter-extra-sm;
+}
+
+form {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: $box-std;
+  height: 3vw;
+  font-size: 1.7vw;
+  margin-top: $gutter-extra-sm;
+  &:focus {
+    background: $input-background;
+  }
+}
+
+button {
+  width: 10vw;
+  height: 3.5vw;
+  font-size: 2vw;
+  background: $button-primary;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+  &:hover {
+    background: $button-hover;
+  }
+}
+
+.cowpen {
+  margin-top: 2.5%;
+}
+
+.cow {
+  margin-left: 32%;
+}
+
+.text-binder {
+  float: right;
+  margin-top: $gutter-extra-sm;
+}
