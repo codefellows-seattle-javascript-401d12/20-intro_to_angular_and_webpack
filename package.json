@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack --progress --colors",
     "watch": "webpack-dev-server --progress --colors --inline --hot",
-    "lint": "eslint app/*.js"
+    "lint": "eslint app/*.js",
+    "test-watch": "./node_modules/karma/bin/karma start",
+    "test": "./node_modules/karma/bin/karma start --single-run"
   },
   "repository": {
     "type": "git",
