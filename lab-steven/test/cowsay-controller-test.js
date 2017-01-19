@@ -40,4 +40,17 @@ describe('Cowsay Controller', function() {
       expect(this.cowsayCtrl.history.length).toEqual(1);
     });
   });
+
+  describe('cowsayCtrl.remove', () => {
+    it('should remove the last cow', () => {
+      this.cowsayCtrl.saveCow('boohoo');
+      let expected = this.cowsayCtrl.savedCow;
+      this.cowsayCtrl.saveCow('hooboo');
+      let unexpected = this.cowsayCtrl.savedCow;
+      this.cowsayCtrl.remove();
+      expect(this.cowsayCtrl.savedCow).toEqual(expected);
+      expect(this.cowsayCtrl.savedCow).not.toEqual(unexpected);
+      expect(this.cowsayCtrl.history.length).toEqual(1);
+    });
+  });
 });
