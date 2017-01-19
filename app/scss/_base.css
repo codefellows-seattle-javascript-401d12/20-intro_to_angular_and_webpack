@@ -1,8 +1,8 @@
 $orange: #f4a142;
 $blue: #4286f4;
 $brand-primary: $orange;
-$btn-primary: $brand-primary;
-$btn-hover: $brand-primary / 2;
+$btn-primary: $blue;
+$btn-hover: $brand-primary;
 $black: #111;
 $white: #f0f0f0;
 $box-std: 30%;
@@ -23,15 +23,17 @@ pre {
 }
 
 button {
-  width: $box-std / 3;
+  width: 80%;
   padding: 2% 0;
   font-size: 2vw;
   background: $btn-primary;
-  color: $black;
+  color: $white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   transition: 350ms all;
+  margin: $gutter-std;
+  text-transform: uppercase;
 
   &:hover {
     background: $btn-hover;
@@ -40,25 +42,51 @@ button {
 
 select {
   height: 20%;
-  width: $box-std;
+  width: 80%;
+  margin: $gutter-std;
   font-size: 3vw;
   border: none;
   border-radius: 3px;
   background: $blue;
   color: $white;
   padding: 2%;
+  display: block;
+}
+
+label {
+  margin: $gutter-std;
 }
 
 input[type="text"] {
+  display: block;
   font-size: 2vw;
-  width: $box-std;
+  width: 76%;
+  margin: $gutter-std;
   padding: 2%;
   border: none;
   border-radius: 3px;
 }
 
 .container {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: $box-wide;
+  height: 50%;
+  overflow: scroll;
+}
+
+.cow {
+  width: 50%;
+  height: 30%;
+  overflow: scroll;
+}
+
+.controls {
+  width: 40%;
+  height: 80%;
+  padding: $gutter-sm;
+  position: absolute;
+  top: 10%;
+  right: 0;
 }
