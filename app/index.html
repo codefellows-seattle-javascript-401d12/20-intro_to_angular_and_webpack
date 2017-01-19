@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <title>Geoff's Cowville</title>
+  </head>
+  <body>
+    <header>Geoff's Cowville</header>
+    <main
+      ng-controller="CowsayController as cowsayCtrl"
+      ng-init="cowsayCtrl.current='rooster'">
+      <section class="container">
+        <div class="cow">
+          <pre>{{ cowsayCtrl.speak(cowsayCtrl.text) }}</pre>
+        </div>
+        <div class="controls">
+          <form name="cowsayForm"
+            ng-submit="cowsayCtrl.save()"
+            novalidate
+            >
+            <label>What type of cow?</label>
+            <select ng-model="cowsayCtrl.current">
+              <option
+                ng-repeat="cowfile in cowsayCtrl.cowfiles"
+                value="{{ cowfile }}"
+                >
+                {{ cowfile }}
+              </option>
+            </select>
+            <label>What should it say?</label>
+            <input type="text" ng-model="cowsayCtrl.text">
+
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </section>
+      <section class="container"
+        ng-show="cowsayCtrl.last()"
+        >
+        <div class="cow">
+          <pre>{{ cowsayCtrl.last() }}</pre>
+        </div>
+        <div class="controls">
+          <button id="btn-back"
+            ng-click="cowsayCtrl.back()"
+            >
+            Back
+          </button>
+        </div>
+      </section>
+      <footer>
+        &copy; 2017 Geoff Simons
+      </footer>
+    </main>
+  </body>
+</html>
