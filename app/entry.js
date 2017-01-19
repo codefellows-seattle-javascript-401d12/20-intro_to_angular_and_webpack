@@ -8,22 +8,45 @@ const cowsay = require('cowsay-browser');
 
 const cowsayApp = angular.module('cowsayApp', []);
 
-cowsayApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
+cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 
-function CowsayController($log, $scope) {
+function CowsayController($log) {
   $log.debug('CowsayController');
 
-  let cowsayControl = $scope.cowsayControl = {};
+  this.title = 'Welcome to Cowville!';
+  this.history = [];
 
-  cowsayControl.title = 'Welcome to Cowville!';
+  cowsay.list((err, cows) => {
+    this.cows = cows;
+    this.current = this.cows[0];
+  });
 
-  cowsayControl.speak = function(input) {
-    $log.debug('cowsayControl speak');
-    return cowsay.say({ text: input || 'mooooo' });
+  this.update = function(input) {
+    $log.debug('cowsayControl.undo()');
+    return cowsay.say({ text: input || 'mooooo', f: this.current });
   };
 
-  cowsayControl.logger = function(input) {
-    $log.debug('cowsayControl logger');
-    $log.log(input);
+  this.speak = function(input) {
+    $log.debug('cowsayControl.speak()');
+    this.spoken = this.update(input);
+    this.history.push(this.spoken);
   };
+
+  this.undo = function() {
+    $log.debug('cowsayControl.undo()');
+    this.history.pop();
+    this.spoken = this.history.pop() || '';
+  };
+}
+
+cowsayApp.controller('NavController', ['$log', NavController]);
+
+function NavController($log) {
+  $log.debug('NavController');
+
+  this.routes = [
+    { name: 'home', url: '/home' },
+    { name: 'about', url: '/about-us' },
+    { name: 'contact', url: '/contact-us' },
+  ];
 }
