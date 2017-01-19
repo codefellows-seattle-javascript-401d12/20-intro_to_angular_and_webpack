@@ -70,7 +70,7 @@ input[type="text"] {
 }
 
 select {
-
+  // TODO: style me
 }
 
 pre {
@@ -78,6 +78,10 @@ pre {
   margin: $gutter-std;
   padding: $gutter-std;
   background-color: $white;
+  // display: block;
+  // float: left;
+  border: solid gray 1px;
+  // width: 60%;
 }
 
 .clearfix {
@@ -92,58 +96,60 @@ div {
   display: block;
 }
 
-pre {
-  // width: $box-std;
-  width: 60%;
-  background: $white;
-  // float: left;
-  border: solid gray 1px;
-  // height: 200px;
-  float: left;
-  display: block;
-}
-
-.to-the-right {
-  width: 40%;
-  display: block;
-}
-
-.preview {
-  // width: 60%;
-}
-
-.container {
-  // border: 1px solid red;
-  // width: 60%;
-  // width: 80%;
-  // margin: auto;
-}
-
-.whole {
-  width: $box-std * 2;
-}
-
 .spoken-block {
   all: unset;
-}
-
-.half-left {
-  // width: $box-std;
-  // float: left;
-}
-
-.half-right {
-  // width: $box-std;
-  border: solid gray 1px;
-  vertical-align: top;
-  // float: right;
-  // float: right;
 }
 
 .form-element {
   display: block;
   border: solid 1px lightgray;
 }
+
+.preview {
+  width: 60%;
+  display: block;
+  float: left;
+}
+
+// pre {
+//   // width: $box-std;
+//   width: 60%;
+//   background: $white;
+//   // float: left;
+//   border: solid gray 1px;
+//   // height: 200px;
+//   float: left;
+//   display: block;
+// }
+
+// .to-the-right {
+//   width: 40%;
+//   display: block;
+// }
+
+// .container {
+//   // border: 1px solid red;
+//   // width: 60%;
+//   // width: 80%;
+//   // margin: auto;
+// }
+//
+// .whole {
+//   width: $box-std * 2;
+// }
+
+// .half-left {
+//   // width: $box-std;
+//   // float: left;
+// }
+//
+// .half-right {
+//   // width: $box-std;
+//   border: solid gray 1px;
+//   vertical-align: top;
+//   // float: right;
+//   // float: right;
+// }
 
 /* from lab 20 */
 /*** app styles ***/
