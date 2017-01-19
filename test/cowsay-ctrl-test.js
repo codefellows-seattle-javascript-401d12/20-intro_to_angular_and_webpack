@@ -38,5 +38,12 @@ describe('Cowsay Controller', function() {
     });
   });
 
-  
+  describe('#speak', () => {
+    it('should return a cow that says testing', () => {
+      let expected = cowsay.say({text: 'testing', f: this.cowsayCtrl.current});
+      this.cowsayCtrl.speak('testing');
+      expect(this.cowsayCtrl.spoken).toEqual(expected);
+      expect(this.cowsayCtrl.history[0]).toEqual(expected);
+    });
+  });
 });
