@@ -32,4 +32,12 @@ describe('Cowsay Controller', function() {
       expect(expected).toEqual(result);
     });
   });
+
+  describe('cowsayCtrl.saveCow', () => {
+    it('should return "boohoo"', () => {
+      this.cowsayCtrl.saveCow('boohoo');
+      expect(this.cowsayCtrl.savedCow).toEqual(this.cowsayCtrl.speak('boohoo'));
+      expect(this.cowsayCtrl.history.length).toEqual(1);
+    });
+  });
 });
