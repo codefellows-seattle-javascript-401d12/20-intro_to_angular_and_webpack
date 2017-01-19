@@ -89,12 +89,12 @@ pre {
 div {
   // border: 1px solid orange;
   border: 1px lightgray solid;
-  display: inline-block;
+  display: block;
 }
 
 pre {
   // width: $box-std;
-  width: 50%;
+  width: 60%;
   background: $white;
   // float: left;
   border: solid gray 1px;
@@ -103,9 +103,15 @@ pre {
   display: block;
 }
 
-.preview {
-
+.to-the-right {
+  width: 40%;
+  display: block;
 }
+
+.preview {
+  // width: 60%;
+}
+
 .container {
   // border: 1px solid red;
   // width: 60%;
@@ -115,6 +121,10 @@ pre {
 
 .whole {
   width: $box-std * 2;
+}
+
+.spoken-block {
+  all: unset;
 }
 
 .half-left {
@@ -132,6 +142,7 @@ pre {
 
 .form-element {
   display: block;
+  border: solid 1px lightgray;
 }
 
 /* from lab 20 */

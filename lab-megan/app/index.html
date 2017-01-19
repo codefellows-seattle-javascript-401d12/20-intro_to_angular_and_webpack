@@ -20,11 +20,12 @@
         <form ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)" name="cowsayAppForm" novalidate>
 
           <h2>{{ cowsayAppCtrl.title }}</h2>
-          <!-- <div class="whole"> -->
-            <div class="preview">
+
+            <!-- <div class="preview"> -->
               <pre>{{ cowsayAppCtrl.update(cowsayAppCtrl.text) }}</pre>
-            </div>
-            <div class=>
+            <!-- </div> -->
+
+            <div class="to-the-right">
               <div class="form-element">
                 <select ng-model="cowsayAppCtrl.current">
                   <option ng-repeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">{{ cowfile }}</option>
@@ -37,24 +38,27 @@
                 <button type="submit">Speak!</button>
               </div>
             </div>
-          <!-- </div> -->
 
           <div class="clearfix"></div>
 
           <h2>Other Header</h2>
-          <!-- <div class="whole" ng-show="cowsayAppCtrl.spoken"> -->
-          <div ng-show="cowsayAppCtrl.spoken">
-            <div class="preview">
+
+          <div class="spoken-block" ng-show="cowsayAppCtrl.spoken">
+
+            <!-- <div class="preview"> -->
               <pre>{{ cowsayAppCtrl.spoken }}</pre>
-            </div>
-            <div class="form-element">
+            <!-- </div> -->
+
+            <div class="to-the-right">
               <button type="button" ng-click="cowsayAppCtrl.undo()">Undo!</button>
             </div>
+
           </div>
 
         </form>
 
       </section>
+
       <div class="clearfix"></div>
 
     </main>
