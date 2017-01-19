@@ -1,0 +1,39 @@
+// ==== App Styles ==== //
+.container {
+  margin: 0 auto;
+  background: $brand-primary;
+  padding: $gutter-sm;
+  margin-top: $gutter-std;
+}
+
+.cow {
+  @include two-box-display;
+  border: 1px solid $brand-tertiary;
+  padding: $gutter-sm;
+  float: left;
+}
+
+.cowsay-form {
+  float: left;
+  @include two-box-display;
+  background: $brand-secondary;
+  padding: $gutter-std;
+}
+
+.history {
+  @include clearfix;
+  background: $brand-tertiary;
+  margin: -$gutter-sm;
+
+  h3 {
+    padding: $gutter-sm;
+  }
+
+  pre {
+    border: 1px solid $brand-secondary;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
