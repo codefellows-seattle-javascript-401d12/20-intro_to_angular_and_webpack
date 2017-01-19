@@ -1,0 +1,31 @@
+/*** app styles ***/
+
+.spoken-block {
+  all: unset;
+}
+
+.form-element {
+  display: block;
+  padding: $gutter-sm;
+}
+
+.preview {
+  width: 60%;
+  display: block;
+  float: left;
+  background: $white;
+}
+
+.to-the-right {
+  width: 30%;
+  display: inline-block;
+  padding: $gutter-sm;
+}
+
+.thin-gray-line {
+  display: block;
+  height: 2px;
+  background: $brand-primary * 2;
+  margin: $gutter-std 0;
+  border-radius: 3px;
+}
