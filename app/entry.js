@@ -37,7 +37,7 @@ function CowsayController($log) {
     this.history.pop();
     this.spoken = this.history.pop() || '';
   };
-};
+}
 
 cowsayApp.controller('NavController', ['$log', NavController]);
 
@@ -49,4 +49,4 @@ function NavController($log) {
     { name: 'about', url: '/about-us' },
     { name: 'contact', url: '/contact-us' },
   ];
-};
+}
