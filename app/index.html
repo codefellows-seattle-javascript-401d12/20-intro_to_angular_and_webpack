@@ -5,17 +5,46 @@
     <meta charset="utf-8">
   </head>
   <body>
+    <header>
+      <nav ng-controller="NavController as navControl">
+        <ul>
+          <li ng-repeat="route in navControl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
-      <section class="container cowpen" ng-controller="CowsayController">
+      <section
+      class="container cowpen"
+      ng-controller="CowsayController as cowsayControl"
+      ng-init="cowsayControl.current = 'default'">
         <h2 class="title">{{ cowsayControl.title }}</h2>
+
         <pre class="cow">
-          {{ cowsayControl.speak(cowsayControl.text) }}
+          {{ cowsayControl.update(cowsayControl.text) }}
         </pre>
-        <form class="cowform">
+
+        <form
+        ng-submit="cowsayControl.speak(cowsayControl.text)"
+        name="cowsayForm"
+        no validate>
+          <select ng-model="cowsayControl.current">
+            <option ng-repeat="cow in cowsayControl.cows" value="{{ cow }}">{{ cow }}</option>
+          </select>
           <input type="text"
           ng-model="cowsayControl.text"
+          required
           autofocus>
-          <button ng-click="cowsayControl.logger(cowsayControl.text)">Log it!</button>
+          <button type="submit">Log it!</button>
+
+          <div class="history" ng-show="cowsayControl.spoken">
+            <pre>
+              {{ cowsayControl.spoken }}
+            </pre>
+            <button type="button" ng-click="cowsayControl.undo()">Go Back</button>
+          </div>
         </form>
       </section>
 
