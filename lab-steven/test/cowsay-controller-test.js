@@ -15,5 +15,13 @@ describe('Cowsay Controller', function() {
     it('Title should equal 401 JS Cowsay App For Lab 21', () => {
       expect(this.cowsayCtrl.title).toEqual('401 JS Cowsay App For Lab 21');
     });
+
+    it('History should be an empty array', () => {
+      expect(this.cowsayCtrl.history.length).toEqual(0);
+    });
+
+    it('this.cowfiles should be the list of cowfiles from cowsay.list', () => {
+      cowsay.list((err, cowfiles) => expect(this.cowsayCtrl.cowfiles).toEqual(cowfiles));
+    });
   });
 });
