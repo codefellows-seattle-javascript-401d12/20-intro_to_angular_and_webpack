@@ -50,32 +50,48 @@
 	__webpack_require__(1);
 	__webpack_require__(5);
 
-	const angular = __webpack_require__(7);
-	const cowsay = __webpack_require__(9);
+	var angular = __webpack_require__(7);
+	var cowsay = __webpack_require__(9);
 
-	const cowsayApp = angular.module('cowsayApp', []);
+	var cowsayApp = angular.module('cowsayApp', []);
 
-	cowsayApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
-	function CowsayController($log, $scope) {
-	  $log.debug('CowsayController');
+	cowsayApp.controller('cowsayController', ['$log', cowsayController]);
 
-	  let cowsayCtrl = $scope.cowsayCtrl = {};
+	function cowsayController($log) {
+	  var _this = this;
 
-	  cowsayCtrl.title = 'Welcome to Cowville!';
+	  $log.debug('cowsayController constructor');
 
-	  cowsayCtrl.speak = function(input) {
-	    $log.debug('cowsayCtrl.speak()');
+	  cowsay.list(function (err, cowlist) {
+	    _this.cowfiles = cowlist;
+	  });
 
-	    return cowsay.say({ text: input || 'MOOOOOO MOTHERFUCKER' });
+	  this.title = 'CowCreater 1000';
+	  this.currentArt = { text: 'I moo 4 u', f: 'default' };
+	  this.history = [];
+
+	  this.undo = function () {
+	    $log.debug('cowsayCtrl.undo()');
+
+	    if (this.history.length > 0) {
+	      this.currentArt = this.history.pop();
+	      return 1;
+	    }
+	    return 0;
 	  };
 
-	  cowsayCtrl.logger = function(input) {
-	    $log.debug('cowsayCtrl.logger()');
-	    $log.log(input);
+	  this.getCurrentArt = function () {
+	    $log.debug('cowsayCtrl.getCurrentArt()');
+
+	    return cowsay.say({ text: this.currentArt.text || 'BLANK', f: this.currentArt.f });
 	  };
 
+	  this.saveCow = function () {
+	    $log.debug('cowsayCtrl.saveCow()');
+
+	    return this.history.push({ text: this.currentArt.text, f: this.currentArt.f });
+	  };
 	}
-
 
 /***/ },
 /* 1 */
@@ -460,7 +476,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  font-family: helvetica;\n  font-size: 2vw;\n  background: #cccccc; }\n\nh2 {\n  font-size: 3vw;\n  text-align: center;\n  margin-bottom: 5%; }\n\nbutton {\n  float: right;\n  width: 40%;\n  padding: 2% 0;\n  background: #0b0b0b;\n  color: #ddd;\n  border: none;\n  border-radius: 3px;\n  cursor: pointer;\n  transition: 350ms all; }\n  button:hover {\n    background: #31b1c9; }\n\ninput[type=\"text\"] {\n  float: left;\n  width: 50%;\n  margin-right: 2.5%;\n  padding: 2%;\n  border: none;\n  border-radius: 3px; }\n", ""]);
+	exports.push([module.id, "section {\n  width: 80vw;\n  max-width: 960px;\n  margin: 0 auto; }\n\npre {\n  font-family: courier;\n  padding: 10vw;\n  width: 90vw;\n  margin: 0 auto; }\n\nbody {\n  font-family: helvetica;\n  font-size: 4vw;\n  background: #ff3366; }\n\nh2 {\n  font-size: 4vw;\n  text-align: left;\n  margin-bottom: 5%; }\n\nbutton {\n  float: right;\n  width: 40%;\n  padding: 2% 0;\n  background: #0b0b0b;\n  color: #ddd;\n  border: none;\n  border-radius: 3px;\n  cursor: pointer;\n  transition: 350ms all; }\n  button:hover {\n    background: #44c; }\n\ninput[type=\"text\"] {\n  background-color: #226;\n  color: white;\n  font-size: 5vw;\n  float: left;\n  width: 50%;\n  height: 5vw;\n  margin-right: 2.5%;\n  padding: 2%;\n  border: none;\n  border-radius: 3px; }\n\ncrazy-button {\n  float: right;\n  width: 40%;\n  height: 5vw;\n  padding: 2% 0;\n  background: #0b0b0b;\n  color: #ddd;\n  border: none;\n  text-align: center;\n  font-size: 5vw;\n  border-radius: 3px;\n  cursor: pointer;\n  transition: 0ms all; }\n  crazy-button:hover {\n    background: #44c; }\n", ""]);
 
 	// exports
 

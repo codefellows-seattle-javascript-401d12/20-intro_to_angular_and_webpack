@@ -18,7 +18,7 @@ function cowsayController($log) {
     this.cowfiles = cowlist;
   });
 
-  this.title = 'CowCreater 1000';
+  this.title = 'CowCreator 1000';
   this.currentArt = { text: 'I moo 4 u', f: 'default' };
   this.history = [];
 
