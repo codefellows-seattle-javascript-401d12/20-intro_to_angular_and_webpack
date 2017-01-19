@@ -26,4 +26,35 @@ describe('CowsayController', function() {
       });
     });
   });
+  describe('#update', () => {
+    it('should return a cow that says testing', () => {
+      let expected = cowsay.say({ text: 'testing', f: this.cowsayCtrl.current });
+      let result = this.cowsayCtrl.update('testing');
+      expect(result).toEqual(expected);
+    });
+  });
+  describe('#speak', () => {
+    it('should return a cow that says testing and add it to history array', () => {
+      let expected = cowsay.say({ text: 'testing', f: this.cowsayCtrl.current });
+      this.cowsayCtrl.speak('testing');
+      expect(this.cowsayCtrl.spoken).toEqual(expected);
+      expect(this.cowsayCtrl.history[0]).toEqual(expected);
+    });
+  });
+  describe('#undo', () => {
+    it('should add cows to history array and then pop off', () => {
+      let cowsayOne = cowsay.say({ text: 'testing 1', f: this.cowsayCtrl.current });
+      let cowsayTwo = cowsay.say({ text: 'testing 2', f: this.cowsayCtrl.current });
+      this.cowsayCtrl.speak('testing 1');
+      this.cowsayCtrl.speak('testing 2');
+      expect(this.cowsayCtrl.history[0]).toEqual(cowsayOne);
+      expect(this.cowsayCtrl.history[1]).toEqual(cowsayTwo);
+      this.cowsayCtrl.undo();
+      expect(this.cowsayCtrl.history[0]).toEqual(cowsayOne);
+      expect(this.cowsayCtrl.history[1]).toEqual(undefined);
+      this.cowsayCtrl.undo();
+      expect(this.cowsayCtrl.history[0]).toEqual(undefined);
+      expect(this.cowsayCtrl.history[1]).toEqual(undefined);
+    });
+  });
 });
