@@ -1,0 +1,28 @@
+// ==== Mixins ==== //
+@mixin form-styles {
+  font: 2vw $brand-font-primary;
+  border: none;
+  border-radius: 3px;
+  margin-top: $gutter-sm;
+  margin-bottom: $gutter-std;
+  height: 5vw;
+  padding: 0;
+  width: 100%;
+}
+
+@mixin clearfix {
+  display: block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html & { height: 1px }
+}
+
+@mixin two-box-display {
+  width: $box-max / 2 - 7.2%;
+  margin: $gutter-std;
+}

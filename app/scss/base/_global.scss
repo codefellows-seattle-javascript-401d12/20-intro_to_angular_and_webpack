@@ -1,0 +1,80 @@
+// ==== Global Styles ==== //
+body {
+  font: 2vw $brand-font-primary;
+  background: $brand-tertiary;
+  width: 90%;
+  margin: 0 auto;
+}
+
+pre {
+  font: 1.75vw $brand-font-secondary;
+  max-width: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+h1 {
+  float: left;
+  padding: 2vw;
+  font-weight: bold;
+}
+
+h2 {
+  font: 7vw $brand-font-secondary;
+  text-align: center;
+}
+
+input[type="text"] {
+  @include form-styles;
+}
+
+select {
+  @include form-styles;
+}
+
+button {
+  font: 2vw $brand-font-primary;
+  color: $white;
+  border: none;
+  border-radius: 3px;
+  transition: 350ms all;
+  background-color: $btn-primary;
+  cursor: pointer;
+  width: 100%;
+  padding: 2vw;
+  margin-top: 3vw;
+
+  &:hover {
+    background-color: $btn-hover;
+  }
+}
+
+h3 {
+  font: 3vw $brand-font-primary;
+  margin-top: $gutter-lg;
+}
+
+li {
+  display: inline;
+  margin: $gutter-std;
+
+  &:hover {
+    background: $btn-hover;
+    padding: $gutter-std;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $brand-tertiary;
+}
+
+header {
+  background: $brand-secondary;
+}
+
+nav {
+  text-align: right;
+  padding: $gutter-std
+}
