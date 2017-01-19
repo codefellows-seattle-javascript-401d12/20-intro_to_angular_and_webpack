@@ -24,4 +24,12 @@ describe('Cowsay Controller', function() {
       cowsay.list((err, cowfiles) => expect(this.cowsayCtrl.cowfiles).toEqual(cowfiles));
     });
   });
+
+  describe('cowsayCtrl.speak', () => {
+    it('should return "boohoo"', () => {
+      let expected = this.cowsayCtrl.speak('boohoo');
+      let result = cowsay.say({text: 'boohoo', f: this.currentCow});
+      expect(expected).toEqual(result);
+    });
+  });
 });
