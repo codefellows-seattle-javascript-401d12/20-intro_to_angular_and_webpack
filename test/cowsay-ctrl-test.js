@@ -54,7 +54,6 @@ describe('Cowsay Controller', function() {
       this.cowsayCtrl.speak('undo this');
       this.cowsayCtrl.undo();
       expect(this.cowsayCtrl.spoken).toEqual(result);
-
     });
   });
 });
