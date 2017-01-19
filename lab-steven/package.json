@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint app/*.js *.js",
     "build": "webpack",
-    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "test": "./node_modules/karma/bin/karma start --single-run",
+    "test-watch": "./node_modules/karma/bin/karma start"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,12 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-webpack": "^2.0.1",
     "webpack-dev-server": "^1.16.2"
   }
 }
