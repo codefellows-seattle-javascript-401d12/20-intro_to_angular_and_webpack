@@ -59,24 +59,3 @@ function NavAppController($log) {
     }
   ];
 }
-
-
-// code from Lab 20
-// cowsayApp.controller('CowsayAppController', ['$log', '$scope', CowsayAppController]);
-//
-// function CowsayAppController($log, $scope) {
-//   $log.debug('CowsayAppController');
-//   let cowsayAppCtrl = $scope.cowsayAppCtrl = {};
-//
-//   cowsayAppCtrl.title = 'Welcome to Cow Town!';
-//
-//   cowsayAppCtrl.speak = function(input) {
-//     $log.debug('cowsayAppCtrl.speak()');
-//     return cowsay.say({ text: input || 'hissss' });
-//   };
-//
-//   cowsayAppCtrl.logger = function(input) {
-//     $log.debug('cowsayAppCtrl.logger()');
-//     $log.log(input);
-//   };
-// }

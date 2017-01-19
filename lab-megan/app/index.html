@@ -4,52 +4,64 @@
     <title>Welcome to Cowville</title>
   </head>
   <body>
-    <header>
 
+    <header>
       <nav ng-controller="NavAppController as navAppCtrl">
         <ul>
-          <li ng-repeat="route in navAppCtrl.routes">
-            <a href="{{ link.url }}">{{ route.name }}</a>
-          </li>
+          <li ng-repeat="route in navAppCtrl.routes"><a href="{{ link.url }}">{{ route.name }}</a></li>
         </ul>
       </nav>
-
     </header>
+
     <main>
-      <section
-        class="container"
-        ng-controller="CowsayAppController as cowsayAppCtrl"
-        ng-init="cowsayAppCtrl.current = 'squirrel'">
 
-        <h2>{{ cowsayAppCtrl.title }}</h2>
+      <section class="container" ng-controller="CowsayAppController as cowsayAppCtrl" ng-init="cowsayAppCtrl.current = 'squirrel'">
 
-        <pre>
-          {{ cowsayAppCtrl.update(cowsayAppCtrl.text) }}
-        </pre>
+        <form ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)" name="cowsayAppForm" novalidate>
 
-        <form
-          ng-submit="cowsayAppCtrl.speak(cowsayAppCtrl.text)"
-          name="cowsayAppForm"
-          novalidate>
-          <select ng-model="cowsayAppCtrl.current">
-            <option ng-repeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">
-              {{ cowfile }}
-            </option>
-          </select>
+          <h2>{{ cowsayAppCtrl.title }}</h2>
+          <!-- <div class="whole"> -->
+            <div class="preview">
+              <pre>{{ cowsayAppCtrl.update(cowsayAppCtrl.text) }}</pre>
+            </div>
+            <div class=>
+              <div class="form-element">
+                <select ng-model="cowsayAppCtrl.current">
+                  <option ng-repeat="cowfile in cowsayAppCtrl.cowfiles" value="{{ cowfile }}">{{ cowfile }}</option>
+                </select>
+              </div>
+              <div class="form-element">
+                <input type="text" ng-model="cowsayAppCtrl.text" required>
+              </div>
+              <div class="form-element">
+                <button type="submit">Speak!</button>
+              </div>
+            </div>
+          <!-- </div> -->
 
-          <input type="text" ng-model="cowsayAppCtrl.text" required>
-          <button type="submit">Speak!</button>
+          <div class="clearfix"></div>
 
-          <div ng-show="cowsayAppCtrl.spoken" class="history">
-            <pre>
-              {{ cowsayAppCtrl.spoken }}
-            </pre>
-            <button type="button" ng-click="cowsayAppCtrl.undo()">Undo!</button>
+          <h2>Other Header</h2>
+          <!-- <div class="whole" ng-show="cowsayAppCtrl.spoken"> -->
+          <div ng-show="cowsayAppCtrl.spoken">
+            <div class="preview">
+              <pre>{{ cowsayAppCtrl.spoken }}</pre>
+            </div>
+            <div class="form-element">
+              <button type="button" ng-click="cowsayAppCtrl.undo()">Undo!</button>
+            </div>
           </div>
 
         </form>
 
       </section>
+      <div class="clearfix"></div>
+
     </main>
+
+    <footer>
+      <div class="footer">&copy; 2017</div>
+    </footer>
+
   </body>
 </html>
