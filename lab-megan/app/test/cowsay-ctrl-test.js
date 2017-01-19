@@ -48,6 +48,13 @@ describe('Cowsay Controller', function() {
     });
   });
 
-  // TODO test undo function here
+  // describe('#undo', () => {
+  //   it('should undo a cow', () => {
+  //     // let expected =
+  //     // this.
+  //     // expect()
+  //     // expect)
+  //   });
+  // });
 
 });
