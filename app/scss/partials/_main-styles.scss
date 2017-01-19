@@ -5,7 +5,7 @@ $white: #fff;
 $burg: #821013;
 
 // ---- Fonts -----
-$freckleFace: 'Freckle Face', cursive;
+$freckle-face: 'Freckle Face', cursive;
 $luckiestGuy: 'Luckiest Guy', cursive;
 
 // ----- Sizes -----
@@ -16,13 +16,13 @@ $margin-standard: 10%;
 
 // ********** global styles *********
 body {
-  font-family: $freckleFace;
+  font-family: $freckle-face;
   font-size: 2vw;
 }
 
 
 .navbar {
-    font-family: $freckleFace;
+    font-family: $freckle-face;
     height: 3.5vh;
     position: fixed;
     top: 0;
@@ -67,7 +67,7 @@ button {
   outline: none;
   border: none;
   border-radius: 3px;
-  font-family: $freckleFace;
+  font-family: $freckle-face;
   height: $box-standard;
   width: auto;
   cursor: pointer;

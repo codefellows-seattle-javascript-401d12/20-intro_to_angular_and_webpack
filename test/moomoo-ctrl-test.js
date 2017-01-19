@@ -57,4 +57,14 @@ describe('MooMooController', function() {
       expect(this.mooMooCtrl.spoken).toEqual(expected);
     });
   });
+
+  describe('#sayThat', () => {
+    it('should return a what was last said', () => {
+      // this.mooMooCtrl.speak('ONE');
+      // this.mooMooCtrl.speak('TWO');
+      let expected = 'ONE';
+      let result = this.mooMooCtrl.sayThat('ONE');
+      expect(result).toEqual(expected);
+    });
+  });
 });
