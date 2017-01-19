@@ -75,8 +75,8 @@ select {
 
 pre {
   font-family: monospace;
-  margin: $gutter-std;
-  padding: $gutter-std;
+  // margin: $gutter-std;
+  // padding: $gutter-std;
   background-color: $white;
   // display: block;
   // float: left;
@@ -93,7 +93,7 @@ pre {
 div {
   // border: 1px solid orange;
   border: 1px lightgray solid;
-  display: block;
+  // display: block;
 }
 
 .spoken-block {
@@ -109,6 +109,7 @@ div {
   width: 60%;
   display: block;
   float: left;
+  border: solid red 1px;
 }
 
 // pre {
