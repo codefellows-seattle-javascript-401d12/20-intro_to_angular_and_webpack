@@ -8,17 +8,30 @@ const cowsay = require('cowsay-browser');
 
 const cowApp = angular.module('cowApp', []);
 
-cowApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
+cowApp.controller('CowsayController', ['$log', CowsayController]);
 
-function CowsayController($log, $scope) {
+function CowsayController($log) {
   $log.debug('CowsayController');
 
-  let cowsayCtrl = $scope.cowsayCtrl = {};
+  this.title = '401 JS Cowsay App For Lab 21';
+  this.history = [];
 
-  cowsayCtrl.title = 'Cowsay controller title';
+  cowsay.list((err, cowfiles) => this.cowfiles = cowfiles);
 
-  cowsayCtrl.speak = function(message) {
+  this.speak = function(message) {
     $log.debug('cowsayCtrl.speak');
-    return cowsay.say({text: message || 'Tell me something to say.', f: 'ghostbusters'});
+    return cowsay.say({text: message || 'Tell me something to say.', f: this.currentCow});
+  };
+
+  this.saveCow = function(message) {
+    $log.debug('cowsayCtrl.saveCow');
+    this.savedCow = this.speak(message);
+    this.history.push(this.savedCow);
+  };
+
+  this.remove = function() {
+    $log.debug('cowsayCtrl.remove');
+    this.history.pop();
+    this.savedCow = this.history[this.history.length - 1] || '';
   };
 }
