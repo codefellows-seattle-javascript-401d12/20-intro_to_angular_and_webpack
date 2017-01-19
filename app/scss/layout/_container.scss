@@ -1,0 +1,17 @@
+.container {
+  width: $box-lg + 10%;
+  margin: $ctr;
+}
+
+.inner-contain {
+  float: left;
+  width: $box-std + 10%;
+  height: 12em;
+  overflow: auto;
+  background: $black;
+  margin-left: $gutter-std + 5%;
+  margin-bottom: $gutter-std;
+  border: $btn-hover ridge 1vw;
+  border-radius: 3px;
+  padding-bottom: $pad-reg;
+}
