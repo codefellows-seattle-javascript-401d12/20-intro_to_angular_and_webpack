@@ -6,7 +6,9 @@
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "lint": "eslint ./app/*.js **.js"
+    "lint": "eslint ./app/*.js **.js",
+    "test-watch": "./node_modules/karma/bin/karma start",
+    "test": "./node_modules/karma/bin/karma start --single-run"
   },
   "repository": {
     "type": "git",
