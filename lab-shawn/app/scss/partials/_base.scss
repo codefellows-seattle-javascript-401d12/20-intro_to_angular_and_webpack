@@ -1,31 +1,4 @@
-// ::: @mixin :::
-
-@mixin box-shadow($x,$y,$blur,$spread,$color) {
-  -webkit-box-shadow: $x $y $blur $spread $color;
-  -moz-box-shadow: $x $y $blur $spread $color;
-  -ms-box-shadow: $x $y $blur $spread $color;
-  box-shadow: $x $y $blur $spread $color;
-}
-
-// ::: $vars :::
-
-$brand-primary: #aaa;
-$btn-primary: #072740;
-$btn-hover: #31b1c1;
-$black: #000;
-$white: #fff;
-$input-bg: #f2f2f2;
-$nav-bg: #072740;
-
-
-$box-std: 90%;
-$half-cont: 50%;
-$gutter-std: 5%;
-$gutter-small: $gutter-std / 2;
-$border-radius: 2px;
-
 // ::: global styles :::
-
 body {
   font-family: helvetica;
   font-size: 2vw;
@@ -61,6 +34,10 @@ nav{
       font-weight: bold;
     }
   }
+}
+main{
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 h2 {
@@ -119,29 +96,4 @@ select{
   margin: $gutter-small $gutter-std ($gutter-std * 2) ;
   width: $box-std;
   font-size: 2vw;
-}
-
-
-// ::: app styles :::
-
-.container {
-  float: left;
-  width: $box-std;
-  margin: 3%;
-  padding: 2%;
-  background: #fff;
-  @include box-shadow(2px, 2px, 2px, 1px, rgba(0, 0, 0, 0.2));
-
-}
-
-.history{
-  clear: both;
-  h2{
-    border-top: 1px solid $input-bg;
-    padding-top: $gutter-small;
-  }
-  pre{
-    width: $box-std;
-    text-align: center;
-  }
 }

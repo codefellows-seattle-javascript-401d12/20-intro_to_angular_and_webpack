@@ -1,7 +1,7 @@
 'use strict';
 
 const HTMLPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');//builds out bundle file
 
 module.exports = {
   entry: `${__dirname}/app/entry.js`,
@@ -18,13 +18,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.scss$/,
-        loader: 'style!css!sass'
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
       },
       {
         test:/\.(eot|woff|ttf|svg).*/,
