@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app='cowsayApp'>
+  <head>
+    <title>Straight Outta Cowville</title>
+  </head>
+  <body>
+    <header>
+      <nav ng-controller="NavController as navCtrl">
+        <h2>SoCV</h2>
+        <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="container" ng-controller="CowsayController as cowsayCtrl" ng-init="cowsayCtrl.current = 'default'">
+        <h2>{{cowsayCtrl.title}}</h2>
+        <pre class="cow">
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+        </pre>
+        <form name="cowsayForm" ng-submit="cowsayCtrl.speak(cowsayCtrl.text)" novaliate>
+          <h3>Select a cowfile.</h3>
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{cowfile}}">
+              {{cowfile}}
+            </option>
+          </select>
+          <h3>What does it say?</h3>
+          <input type="text" ng-model="cowsayCtrl.text" required/>
+          <h3>View it.</h3>
+          <button type="submit">Speak</button>
+        </form>
+
+        <div ng-show="cowsayCtrl.spoken" class="history">
+          <h2>Moo Said What?</h2>
+          <pre>
+            {{cowsayCtrl.spoken}}
+          </pre>
+          <button type="button" ng-click="cowsayCtrl.undo()">Undo</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
