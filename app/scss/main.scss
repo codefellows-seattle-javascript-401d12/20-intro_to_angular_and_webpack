@@ -1,0 +1,151 @@
+//:::::::::: $var :::::::::::::
+
+$brand-primary: #4d4740;
+$btn-primary: #735343;
+$box-std: 40%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+$black: #000;
+$white: #F2F2F2;
+$btn-hover: $brand-primary / 2;
+$headerfontColor: #9a8e7f;
+$font-std: 2vw;
+$border-rds-std: 5px;
+
+//:::::::: global Style :::::::::::::
+html{
+ background: $brand-primary;
+ width: device-width;
+}
+body{
+  font-family: helvetica;
+  background: $brand-primary * 3.5;
+  width: $box-std * 2;
+  margin: $box-std / 4;
+  font-size: $font-std * 2;
+}
+h2{
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  font-weight: bold;
+}
+input[type="text"]{
+  width: $box-std * 2;
+  padding: 2%, 0;
+  border: none;
+  border-radius: $border-rds-std;
+  border: 3px solid $btn-primary;
+  margin: $box-std / 2;
+}
+button {
+  background-color: $btn-primary / 3;
+  &:hover{
+    background: $btn-hover;
+  }
+  transition: 350ms all;
+  color: $white;
+  cursor: pointer;
+  @extend input[type="text"];
+  }
+
+  main{
+   text-align: center;
+   margin-top: $gutter-sm;
+   width: 100%;
+  }
+
+  pre{
+    margin: $gutter-std;
+    border: 3px solid $btn-primary;
+    width: $box-std * 1.5;
+    display: inline-block;
+    font-size: $font-std;
+  }
+  form{
+   width: $box-std / 2;
+   display: inline-block;
+  }
+ select{
+  @extend input[type="text"];
+ }
+ //:::::::::::: layout :::::::::::::
+
+ header{
+  background: $headerfontColor / 2;
+  color: $headerfontColor;
+  height: $box-std / 3;
+  text-decoration: none;
+  width: $box-std * 2.5;
+  position: relative;
+
+  li{
+   display: inline-block;
+   margin-right: $gutter-std * 1.5;
+   font-size: $font-std;
+   a{
+    text-decoration: none;
+    color: $headerfontColor;
+    width: $box-std;
+   }
+  }
+ }
+ nav{
+  float: right;
+  vertical-align: middle;
+  width: $box-std * 1.5;
+  position: absolute;
+  top: $box-std / 2;
+  left: $box-std * 1.5;
+ }
+//:::::::::: container :::::::::::::
+#logo{
+    position: relative;
+    img{
+    height: $box-std / 4;
+    width:$box-std / 4;
+    background-color: $headerfontColor;
+    border-radius: $box-std * 2;
+    margin: $gutter-sm;
+    vertical-align: middle;
+  }
+  li{
+   position: absolute;
+   top: $box-std * .85;
+
+  }
+}
+.container{
+  width: 100%;
+  height: $box-std;
+  border: 5px, solid, black;
+}
+.history{
+  @extend body;
+  position: absolute;
+  // height: $box-std;
+  margin-top: 0;
+  left: 0%;
+  pre{
+   float: left;
+   margin-left: $gutter-sm * 3.5;
+  }
+  button{
+   @extend form;
+   position: absolute;
+   top: $box-std;
+   left: $box-std * 1.35;
+  }
+}
+.text-binder {
+ width: $box-std * 2;
+ height: $box-std;
+ background: $btn-primary / 3;
+ margin: $gutter-std;
+ padding: $font-std;
+ color: $white;
+ input{
+    width: 100%;
+  }
+}
