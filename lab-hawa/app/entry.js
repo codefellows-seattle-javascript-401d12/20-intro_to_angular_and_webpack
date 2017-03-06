@@ -8,14 +8,14 @@ const cowsay = require('cowsay-browser');
 
 const cowsayApp = angular.module('cowsayApp', []);
 
-cowsayApp.controller('CowsayController', ['$log', '$scope', CowsayController]);
+cowsayApp.controller('CowController', ['$log', '$scope', CowController]);
 
-function CowsayController($log, $scope) {
-  $log.debug('CowsayController');
+function CowController($log, $scope) {
+  $log.debug('CowController');
 
   let cowsayCtrl = $scope.cowsayCtrl= {};
 
-  cowsayCtrl.title = 'Welcome to Cowville!';
+  cowsayCtrl.title = 'Welcome to Cow Ville!';
 
   cowsayCtrl.speak = function(input) {
     $log.debug('cowsayCtrl.speak()');
@@ -26,4 +26,17 @@ function CowsayController($log, $scope) {
     $log.debug('cowsayCtrl.logger()');
     $log.log(input);
   };
-};
+
+  this.undo = function() {
+    $log.debug('mooMooCtrl.undo()');
+    this.history.pop();
+    this.spoken = this.history.pop() || '';
+  };
+
+  this.sayThat = function(output) {
+    $log.debug('mooMooCtrl.sayThat()');
+
+    this.said = output;
+    return this.said;
+  };
+}

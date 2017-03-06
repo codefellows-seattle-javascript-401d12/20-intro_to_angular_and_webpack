@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 
 <html ng-app="cowsayApp">
-  <head>
-    <title>Welcome to Cowville!</title>
-  </head>
-  <body>
-    <main>
-      <section class="container" ng-controller="CowsayController">
-        <h2>{{ cowsayCtrl.title }}</h2>
 
-        <pre class="cow">
-          {{ cowsayCtrl.speak(cowsayCtrl.text) }}
-        </pre>
+<head>
+  <title>Welcome to Cowville!</title>
+</head>
 
-        <input type="text" ng-model="cowsayCtrl.text">
-        <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log it!</button>
-      </section>
+<body>
+  <main>
+    <section class="container" ng-controller="CowsayController">
+      <h2>{{ cowsayCtrl.title }}</h2>
 
-      <section class="container" ng-controller="CowsayController">
-        <h2>2 Way Data Binding!</h2>
+      <pre class="cow">
+        {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+      </pre>
 
-        <p class="text-binder">{{ cowsayCtrl.bindText }}</p>
-        <input type="text" ng-model="cowsayCtrl.bindText">
-      </section>
-    </main>
-  </body>
+      <input type="text" ng-model="cowsayCtrl.text">
+      <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log it!</button>
+      <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)"
+    </section>
+
+    <section class="container" ng-controller="CowsayController">
+      <h2>Binding Two Way!</h2>
+
+      <p class="text-binder">{{ cowsayCtrl.bindText }}</p>
+      <div class="row">
+        <button type="button" ng-click="CowCtrl.undo()">Undo</button>
+      </div>
+      <input type="text" ng-model="cowsayCtrl.bindText">
+    </section>
+  </main>
+</body>
 </html>
