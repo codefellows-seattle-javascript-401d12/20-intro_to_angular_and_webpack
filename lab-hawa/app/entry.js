@@ -40,3 +40,24 @@ function CowController($log, $scope) {
     return this.said;
   };
 }
+
+cowsayApp.controller('NavController', ['$log', NavController]);
+
+function NavController($log) {
+  $log.debug('NavController');
+
+  this.routes = [
+    {
+      name: 'home',
+      url: '/home'
+    },
+    {
+      name: 'about',
+      url: '/about-us'
+    },
+    {
+      name: 'contact',
+      url: '/contact'
+    }
+  ];
+}
