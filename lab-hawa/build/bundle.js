@@ -56,6 +56,8 @@
 
 	cowsayApp.controller('CowController', ['$log', '$scope', CowController]);
 
+	this.history = [];
+
 	function CowController($log, $scope) {
 	  $log.debug('CowController');
 
@@ -65,7 +67,7 @@
 
 	  cowsayCtrl.speak = function(input) {
 	    $log.debug('cowsayCtrl.speak()');
-	    return cowsay.say({ text: input || 'moooooooo' });
+	    return cowsay.say({ text: input || 'moooooooo', f: this.current });
 	  };
 
 	  cowsayCtrl.logger = function(input) {
