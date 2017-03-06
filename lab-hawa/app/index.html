@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html ng-app="cowsayApp">
+
+<head>
+  <title>Welcome to Cowville!</title>
+</head>
+
+<body
+
+  <header>
+    <h1>CowVille</br></h1>
+    <nav ng-controller="NavController as navCtrl">
+      <ul>
+        <li ng-repeat="route in navCtrl.routes">
+          <a href="{{route.url}}">{{route.name}}</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container" ng-controller="CowsayController">
+      <h2>{{ cowsayCtrl.title }}</h2>
+
+      <pre class="cow">
+        {{ cowsayCtrl.speak(cowsayCtrl.text) }}
+      </pre>
+
+      <input type="text" ng-model="cowsayCtrl.text">
+      <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)">Log it!</button>
+      <button ng-click="cowsayCtrl.logger(cowsayCtrl.text)"
+    </section>
+
+    <section class="container" ng-controller="CowsayController">
+      <h2>Binding Two Way!</h2>
+
+      <p class="text-binder">{{ cowsayCtrl.bindText }}</p>
+      <div class="row">
+        <button type="button" ng-click="CowCtrl.undo()">Undo</button>
+      </div>
+      <input type="text" ng-model="cowsayCtrl.bindText">
+    </section>
+  </main>
+</body>
+</html>
